@@ -1,24 +1,16 @@
-# README
+# Sumo City
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ * Ruby version
+ `2.7.0`
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
+ * Rails Version
+ `6.0.2.2`
 
 * Database creation
-
-* Database initialization
+`rails db:create`
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+`rspec`
 
 * Deployment instructions
-
-* ...
+`rails s` then `localhost:3000`
