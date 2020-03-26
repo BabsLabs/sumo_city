@@ -22,4 +22,6 @@
  .navbar {
    width: 100%;
    background-color: blue;
+   padding-left: 10px;
+   display: flex;
  }
