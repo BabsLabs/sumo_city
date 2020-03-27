@@ -4,12 +4,18 @@ import PropTypes from "prop-types"
 class Navbar extends React.Component {
   render () {
     return (
-      <React.Fragment>
         <nav className="navbar">
-          <h1>LOGO</h1>
+          <h2>LOGO</h2>
           <h1>SumoCity</h1>
+          <ul>
+            <li>
+              Home
+            </li>
+            <li>
+              About
+            </li>
+          </ul>
         </nav>
-      </React.Fragment>
     );
   }
 }
