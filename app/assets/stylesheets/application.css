@@ -14,14 +14,45 @@
  *= require_self
  */
 
- body {
-  margin: 0;
-  padding: 0;
+ :root {
+   --primary-color: lightblue;
+   --secondary-color: black;
+   --light-color: cornsilk;
  }
 
- .navbar {
-   width: 100%;
-   background-color: blue;
-   padding-left: 10px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ body {
+   background-color: var(--light-color);
+   color: var(--secondary-color);
+ }
+
+ a {
+   text-decoration: none;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+  .navbar {
    display: flex;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 1;
+   width: 100%;
+   padding-left: 10px;
+   background-color: blue;
+ }
+
+ .navbar ul {
+   display: flex;
+ }
+
+ .navbar li {
+   padding: 0 10px;
  }
