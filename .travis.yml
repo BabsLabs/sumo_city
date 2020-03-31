@@ -1,0 +1,8 @@
+before_script:
+  - psql -c 'create database sumo_city_test;' -U postgres
+
+language: ruby
+rvm:
+ - 2.7.0
+services:
+ - postgresql
