@@ -9,10 +9,10 @@ class Navbar extends React.Component {
           <h1>SumoCity</h1>
           <ul>
             <li>
-              Home
+              <a href='/'>Home</a>
             </li>
             <li>
-              About
+              <a href='/about'>About</a>
             </li>
           </ul>
         </nav>
