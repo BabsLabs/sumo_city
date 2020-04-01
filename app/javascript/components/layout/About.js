@@ -9,7 +9,7 @@ class About extends React.Component {
         <p>Sumo city is your homepage for all things Sumo!</p>
         <p>Includes info on Sumos and the Stables they train in.</p>
       </section>
-    );
+    )
   }
 }
 
