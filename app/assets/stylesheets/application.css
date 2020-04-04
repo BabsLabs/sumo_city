@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700;800&family=Poppins&display=swap');
+
+:root {
+  --primary-color: lightblue;
+  --secondary-color: black;
+  --light-color: cornsilk;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: var(--primary-color);
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: 800;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar li {
+  padding-right:  10px;
+}
+
+.navbar a {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.navbar a:hover {
+  color: var(--light-color);
+}
+
+#navbar-sumoLogo {
+  height: 40px;
+}
+
+#navbar-sumoCity {
+  font-size: 2rem;
+}
+
+.about {
+  padding: 2rem;
+  text-align: center;
+}
