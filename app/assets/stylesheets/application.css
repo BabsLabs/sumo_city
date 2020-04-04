@@ -82,3 +82,31 @@ ul {
   padding: 2rem;
   text-align: center;
 }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  background-color: whitesmoke;
+}
+
+.hero h1 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.heroImage {
+  display: grid;
+  justify-items: center;
+}
+
+.heroImage img {
+  width: 70%;
+}
