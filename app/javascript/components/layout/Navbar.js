@@ -1,12 +1,12 @@
 import React from "react"
-import PropTypes from "prop-types"
+import sumoLogo from "../images/SumoLogo"
 
 class Navbar extends React.Component {
   render () {
     return (
         <nav className="navbar">
-          <h2>LOGO</h2>
-          <h1>SumoCity</h1>
+          <img src={sumoLogo} id="navbar-sumoLogo"/>
+          <h1 id="navbar-sumoCity">SumoCity</h1>
           <ul>
             <li>
               <a href='/'>Home</a>
