@@ -1,5 +1,5 @@
 import React from "react"
-import DemoMapboxImage from "../images/DemoMapboxImage"
+import DemoMapboxImage from "../../images/DemoMapboxImage"
 
 class HeroFindStable extends React.Component {
   render() {
