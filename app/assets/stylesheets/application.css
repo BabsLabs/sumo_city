@@ -19,6 +19,7 @@
   --primary-color: lightblue;
   --secondary-color: black;
   --light-color: cornsilk;
+  --light-color-two: whitesmoke;;
 }
 
 * {
@@ -87,7 +88,6 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 2rem;
-  background-color: whitesmoke;
 }
 
 .hero h1 {
@@ -110,4 +110,8 @@ ul {
 
 .heroImage img {
   width: 70%;
+}
+
+.heroFindSumo {
+  background-color: var(--light-color-two);
 }
