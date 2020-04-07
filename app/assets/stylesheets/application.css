@@ -19,6 +19,7 @@
   --primary-color: lightblue;
   --secondary-color: black;
   --light-color: cornsilk;
+  --light-color-two: whitesmoke;;
 }
 
 * {
@@ -81,4 +82,40 @@ ul {
 .about {
   padding: 2rem;
   text-align: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+}
+
+.hero h1 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+}
+
+.heroImage {
+  display: grid;
+  justify-items: center;
+}
+
+.heroImage img {
+  width: 70%;
+}
+
+.heroFindSumo {
+  background-color: var(--light-color-two);
+}
+
+.heroSumoWiki {
+  background-color: var(--light-color-two);
 }
