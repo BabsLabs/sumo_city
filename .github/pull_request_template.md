@@ -1,4 +1,4 @@
-### Fixes # (issues)
+# PR Documentation
 
 ## Type of change
 - [ ] :beetle: Bug fix (non-breaking change which fixes an issue)
@@ -19,3 +19,6 @@
 - [ ] :no_entry_sign: My changes generate no new warnings
 - [ ] :heavy_check_mark: I have added tests that prove my fix is effective or that my feature works
 - [ ] :100: New and existing unit tests pass locally with my changes
+
+## Other
+(bullet points)
