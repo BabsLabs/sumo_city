@@ -69,7 +69,10 @@ RSpec.configure do |config|
 
 end
 
-require 'capybara/rails'
+require 'rspec/rails'
+require 'capybara/rspec'
+require 'capybara/dsl'
+require 'database_cleaner'
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new app, browser: :chrome,
