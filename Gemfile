@@ -51,7 +51,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # React tests
 group :test do
-  gem 'phantomjs'
-  gem 'poltergeist'
   gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
