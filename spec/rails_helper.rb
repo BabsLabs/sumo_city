@@ -62,3 +62,17 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+require 'capybara/poltergeist'
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, {
+    js_errors: false,
+    # js_errors: true, #setting this to true outputs all my console.logs to Terminal
+    phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any'],
+    debug: false,
+    timeout: 500,
+    phantomjs: File.absolute_path(Phantomjs.path)
+  })
+end
+Capybara.javascript_driver = :poltergeist
+Capybara.default_driver = :poltergeist
