@@ -61,18 +61,19 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.before(:each, type: :feature) do
+    # Note (Mike Coutermarsh): Make browser huge so that no content is hidden during tests
+    Capybara.current_session.driver.browser.manage.window.resize_to(2_500, 2_500)
+  end
+
 end
 
-require 'capybara/poltergeist'
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, {
-    js_errors: false,
-    # js_errors: true, #setting this to true outputs all my console.logs to Terminal
-    phantomjs_options: ['--ignore-ssl-errors=yes', '--ssl-protocol=any'],
-    debug: false,
-    timeout: 500,
-    phantomjs: File.absolute_path(Phantomjs.path)
-  })
+require 'capybara/rails'
+
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new app, browser: :chrome,
+    options: Selenium::WebDriver::Chrome::Options.new(args: %w[headless disable-gpu])
 end
-Capybara.javascript_driver = :poltergeist
-Capybara.default_driver = :poltergeist
+
+Capybara.javascript_driver = :chrome
