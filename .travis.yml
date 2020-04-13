@@ -2,11 +2,10 @@ sudo: required
 dist: trusty
 addons:
   chrome: stable
+
 language: ruby
 rvm:
- - 2.7.0
-services:
- - postgresql
+  - 2.7.0
 env:
   matrix:
       - DB=postgresql
@@ -23,3 +22,4 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - npm i -g npm@^3
   - sleep 3
+
