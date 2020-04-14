@@ -12,7 +12,6 @@ rvm:
   
 services:
   - postgresql
-  - xvfb
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
