@@ -4,8 +4,6 @@ rvm:
 services:
   - postgresql
   - xvfb
-env:
-  - DB=postgresql
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
@@ -21,3 +19,21 @@ addons:
 before_install:
   - # start your web application and listen on `localhost`
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  # You can add here your credentials
+
+development:
+  <<: *default
+  database: depot_development
+
+test:
+  <<: *default
+  database: depot_test
+
+production:
+  <<: *default
+  database: depot_production
