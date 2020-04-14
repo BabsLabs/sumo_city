@@ -1,3 +1,0 @@
-test:
-  adapter: postgresql
-  database: sumo_city_test
