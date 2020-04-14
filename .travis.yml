@@ -13,6 +13,7 @@ test:
   adapter: postgresql
   database: sumo_city_test
 dist: trusty
+sudo: required
 addons:
   chrome: stable
   postgresql: "9.6"
@@ -37,3 +38,5 @@ test:
 production:
   <<: *default
   database: sumo_city_production
+
+
