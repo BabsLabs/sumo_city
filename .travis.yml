@@ -12,6 +12,8 @@ rvm:
 services:
   - postgresql
   - xvfb
+steps: 
+  run: bundle exec rails assets:precompile
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
@@ -41,6 +43,3 @@ test:
 production:
   <<: *default
   database: sumo_city_production
-
-steps: 
-  run: bundle exec rails webpacker:compile
