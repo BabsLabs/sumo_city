@@ -8,10 +8,10 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create database sumo_city_test;' -U postgres
 test:
   adapter: postgresql
-  database: travis_ci_test
+  database: sumo_city_test
 dist: trusty
 addons:
   chrome: stable
@@ -27,12 +27,12 @@ default: &default
 
 development:
   <<: *default
-  database: depot_development
+  database: sumo_city_development
 
 test:
   <<: *default
-  database: depot_test
+  database: sumo_city_test
 
 production:
   <<: *default
-  database: depot_production
+  database: sumo_city_production
