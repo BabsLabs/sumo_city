@@ -42,4 +42,5 @@ production:
   <<: *default
   database: sumo_city_production
 
-
+steps: 
+  run: bundle exec rails webpacker:compile
