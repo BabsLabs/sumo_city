@@ -3,6 +3,7 @@ rvm:
   - 2.7.0
 services:
   - postgresql
+  - xvfb
 env:
   - DB=postgresql
 script:
@@ -11,11 +12,6 @@ script:
   - bundle exec rake
 before_script:
   # - psql -c 'create database sumocity_travis_test;' -U postgres
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
-  - rackup  # start a Web server
-  - sleep 3 # give Web server some time to bind to sockets, etc
 test:
   adapter: postgresql
   database: sumocity_travis_test
