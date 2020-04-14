@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.7.0
+services:
+  - postgresql
 env:
   - DB=postgresql
 script:
@@ -8,5 +10,7 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
-  - psql -c 'create database sumocity_travis_test' -U postgres
-
+  - psql -c 'create database sumocity_travis_test;' -U postgres
+test:
+  adapter: postgresql
+  database: sumocity_travis_test
