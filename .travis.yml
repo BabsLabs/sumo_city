@@ -1,3 +1,11 @@
+dist: trusty
+sudo: required
+addons:
+  chrome: stable
+  postgresql: "9.6"
+  apt:
+    packages:
+      - chromium-chromedriver
 language: ruby
 rvm:
   - 2.7.0
@@ -12,14 +20,6 @@ before_script:
 test:
   adapter: postgresql
   database: sumo_city_test
-dist: trusty
-sudo: required
-addons:
-  chrome: stable
-  postgresql: "9.6"
-  apt:
-    packages:
-      - chromium-chromedriver
 before_install:
   - # start your web application and listen on `localhost`
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &

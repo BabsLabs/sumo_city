@@ -25,10 +25,15 @@ require 'capybara/dsl'
 # require only the support files necessary.
 #
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
-Capybara.register_driver :selenium_chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+Capybara.register_driver :chrome do |app|
+  browser_options = ::Selenium::WebDriver::Chrome::Options.new
+  browser_options.args << '--headless'
+  browser_options.args << '--disable-gpu'
+  browser_options.args << '--window-size=1920,2000'
+  browser_options.args << '--no-sandbox' if ENV['CONTINUOUS_INTEGRATION']
+  Capybara::Selenium::Driver.new app, browser: :chrome, options: browser_options
 end
-Capybara.javascript_driver = :selenium_chrome
+Capybara.javascript_driver = :chrome
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
