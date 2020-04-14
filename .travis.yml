@@ -12,11 +12,10 @@ rvm:
 services:
   - postgresql
   - xvfb
-steps: 
-  run: bundle exec rails assets:precompile
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
+  - bundle exec rails webpacker:compile
 before_script:
   - psql -c 'create database sumo_city_test;' -U postgres
 test:
