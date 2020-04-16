@@ -1,5 +1,7 @@
 # PR Documentation
 
+## Fixes #(ISSUE NUMBER)
+
 ## Type of change
 - [ ] :beetle: Bug fix (non-breaking change which fixes an issue)
 - [ ] :hatching_chick: New feature (non-breaking change which adds functionality)
