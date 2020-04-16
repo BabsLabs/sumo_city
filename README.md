@@ -1,4 +1,10 @@
 # Sumo City
+<img src="app/javascript/components/images/SumoLogo.png" alt="SumoCity Logo" width="200"/>
+
+[![Build Status](https://travis-ci.com/BabsLabs/sumo_city.svg?branch=master)](https://travis-ci.com/BabsLabs/sumo_city)
+
+# About
+Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Currently SumoCity is in the first stages but soon you will be able to use the interactive Stable Explorer to learm more about where your favorite Sumos train. In addition there will be a Sumo Wiki with info on everything Sumo. Stay tuned for updates to SumoCity!
 
 ## Requirements
  * Ruby version
@@ -13,6 +19,7 @@
 * Change into SumoCity project directory
 * Install dependencies: `bundle install`
 * Create database: `rails db:create`
+* Migrate databse: `rails db:migrate`
 * Start server: `rails s`
 
 ## Testing
@@ -20,6 +27,20 @@ Testing is currently setup and done with Rspec, Capybara, and Selenium. All test
 
 ### Running Tests
 * Run the full test suite: `rspec`
+* Run an individual test: `rspec /PATH/TO/TEST`
 
 ### Testing Details
 The Capybara javascript driver has been set as Chrome with Selenium instead of RackTest. This configuration is done in the `rails_helper.rb`. It is possible these settings may need to be changed for future tests.
+
+## TechStack
+- Ruby on Rails
+- React-Rails
+- Rspec
+- Capybara
+- Selenium
+- headless chromium webdriver
+- Webpacker
+- Postgresql
+
+## Contributions
+Interested in contributiong to SumoCity? Go ahead and open a PR!
