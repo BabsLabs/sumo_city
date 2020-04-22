@@ -5,7 +5,7 @@ describe "React homepage testing", :type => :feature, js: true do
     visit('/')
     expect(page.title).to have_content("SumoCity")
 
-    within "#heroFindStable" do     
+    within "#heroStableExplorer" do     
       expect(page).to have_content("Stable Explorer")
       expect(page).to have_content("The place where Sumos train is called a Stable.")
       expect(page).to have_content("Use the interactive Stable Explorer to learn more about the stables of all your favorite sumo wrestlers.")
