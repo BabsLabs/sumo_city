@@ -1,10 +1,10 @@
 import React from "react"
 import DemoMapboxImage from "../../images/DemoMapboxImage"
 
-class HeroFindStable extends React.Component {
+class HeroStableExplorer extends React.Component {
   render() {
     return (
-      <div className="hero" id="heroFindStable">
+      <div className="hero" id="heroStableExplorer">
           <section className="heroImage">
             <img src={DemoMapboxImage} alt="MapboxImage" id="heroMapboxImage"/>
           </section>
@@ -18,4 +18,4 @@ class HeroFindStable extends React.Component {
   }
 }
 
-export default HeroFindStable
+export default HeroStableExplorer
