@@ -3,7 +3,7 @@ import React from "react"
 class HeroSumoWiki extends React.Component {
   render() {
     return (
-      <div className="hero heroSumoWiki">
+      <div className="hero" id="heroSumoWiki">
         <section className="heroText">
           <h1>Learn More About Everything Sumo</h1>
           <p>Use our Sumo Wiki to learn more about the rules, history, and vocab of Sumo.</p>
