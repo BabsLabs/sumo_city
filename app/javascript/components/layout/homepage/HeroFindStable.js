@@ -4,9 +4,9 @@ import DemoMapboxImage from "../../images/DemoMapboxImage"
 class HeroFindStable extends React.Component {
   render() {
     return (
-      <div className="hero heroFindStable">
+      <div className="hero" id="heroFindStable">
           <section className="heroImage">
-            <img src={DemoMapboxImage} alt="MapboxImage"/>
+            <img src={DemoMapboxImage} alt="MapboxImage" id="heroMapboxImage"/>
           </section>
           <section className="heroText">
             <h1>Stable Explorer</h1>
