@@ -33,13 +33,20 @@ Testing is currently setup and done with Rspec, Capybara, and Selenium. All test
 The Capybara javascript driver has been set as Chrome with Selenium instead of RackTest. This configuration is done in the `rails_helper.rb`. It is possible these settings may need to be changed for future tests.
 
 ## TechStack
+
+### Languages and Frameworks
 - Ruby on Rails
 - React-Rails
+
+### Testing
 - Rspec
 - Capybara
 - Selenium
 - headless chromium webdriver
 - Webpacker
+- Simplecov
+
+### Database Management
 - Postgresql
 
 ## Contributions
