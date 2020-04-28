@@ -10,7 +10,7 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
  * Ruby version
  `2.7.0`
  * Rails Version
- `6.0.2.2` 
+ `6.0.2.2`
  * React Version
  `6.13.2`
 
@@ -20,6 +20,7 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Install dependencies: `bundle install`
 * Create database: `rails db:create`
 * Migrate databse: `rails db:migrate`
+* Run rake task to import data: `rake import_terms`
 * Start server: `rails s`
 
 ## Testing
