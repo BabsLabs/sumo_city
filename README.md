@@ -19,8 +19,8 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Change into SumoCity project directory
 * Install dependencies: `bundle install`
 * Create database: `rails db:create`
-* Migrate databse: `rails db:migrate`
-* Run rake task to import data: `rake import_terms`
+* Migrate to development database: `rails db:migrate`
+* Run rake task to import data to development database: `rake import:terms`
 * Start server: `rails s`
 
 ## Testing

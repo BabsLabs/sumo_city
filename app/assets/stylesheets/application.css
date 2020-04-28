@@ -103,6 +103,10 @@ ul {
   padding: 2rem;
 }
 
+.heroText h3, h4 {
+  text-align: center;
+}
+
 .heroImage {
   display: grid;
   justify-items: center;
