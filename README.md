@@ -52,3 +52,22 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 
 ## Contributions
 Interested in contributiong to SumoCity? Go ahead and open a PR!
+
+## Warnings and Issues
+
+### Known warnings
+Ruby 2.7.0 is currently generating a series of deprecation warnings when running `rails`, `rake`, and `rspec` commands. This includes running the rails server (`rails s`) and when rendering page refreshes during the local development process.
+
+These deprecation warnings can be silenced by appending the `RUBYOPT='-W:no-deprecated'` command to any rails, rake, or rspec command such as `RUBYOPT='-W:no-deprecated' rails s`, `RUBYOPT='-W:no-deprecated' rails: db migrate`, `RUBYOPT='-W:no-deprecated' rake import:terms`, or `RUBYOPT='-W:no-deprecated' rspec`.
+
+**Example warnings:**
+```
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activesupport-6.0.2.2/lib/active_support/messages/rotator.rb:28: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activesupport-6.0.2.2/lib/active_support/messages/rotator.rb:6: warning: The called method `initialize' is defined here
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionview-6.0.2.2/lib/action_view/view_paths.rb:11: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionview-6.0.2.2/lib/action_view/lookup_context.rb:140: warning: The called method `template_exists?' is defined here
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionview-6.0.2.2/lib/action_view/unbound_template.rb:24: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionview-6.0.2.2/lib/action_view/template.rb:130: warning: The called method `initialize' is defined here
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/sprockets-4.0.0/lib/sprockets/base.rb:119: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
+/Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/sprockets-4.0.0/lib/sprockets/base.rb:78: warning: The called method `find_asset' is defined here
+```  
