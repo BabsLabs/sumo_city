@@ -40,7 +40,7 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 
 ### Languages and Frameworks
 - Ruby on Rails
-- React-Rails
+- Javascript / React
 
 ### Testing
 - Rspec
