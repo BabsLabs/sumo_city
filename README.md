@@ -3,16 +3,17 @@
 
 [![Build Status](https://travis-ci.com/BabsLabs/sumo_city.svg?branch=master)](https://travis-ci.com/BabsLabs/sumo_city)
 
-# About
-Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Currently SumoCity is in the first stages but soon you will be able to use the interactive Stable Explorer to learm more about where your favorite Sumos train. In addition there will be a Sumo Wiki with info on everything Sumo. Stay tuned for updates to SumoCity!
+### Jump To
+- [About](#about)
+- [Setup](#setup)
+- [Testing](#testing)
+- [Technologies](#technologies)
+- [Warnings and Issues](#warnings-and-issues)
+- [Requirements](#requirements)
+- [Contributions](#contributions)
 
-## Requirements
- * Ruby version
- `2.7.0`
- * Rails Version
- `6.0.2.2`
- * React Version
- `6.13.2`
+## About
+Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Currently SumoCity is in the first stages but soon you will be able to use the interactive Stable Explorer to learm more about where your favorite Sumos train. In addition there will be a Sumo Wiki with info on everything Sumo. Stay tuned for updates to SumoCity!
 
 ## Setup
 * Clone repo: `git clone https://github.com/BabsLabs/sumo_city.git`
@@ -35,7 +36,7 @@ Testing is currently setup and done with Rspec, Capybara, and Selenium. All test
 ### Testing Details
 The Capybara javascript driver has been set as Chrome with Selenium instead of RackTest. This configuration is done in the `rails_helper.rb`. It is possible these settings may need to be changed for future tests.
 
-## TechStack
+## Technologies
 
 ### Languages and Frameworks
 - Ruby on Rails
@@ -51,9 +52,6 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 
 ### Database Management
 - Postgresql
-
-## Contributions
-Interested in contributiong to SumoCity? Go ahead and open a PR!
 
 ## Warnings and Issues
 
@@ -72,4 +70,15 @@ These deprecation warnings can be silenced by appending the `RUBYOPT='-W:no-depr
 /Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionview-6.0.2.2/lib/action_view/template.rb:130: warning: The called method `initialize' is defined here
 /Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/sprockets-4.0.0/lib/sprockets/base.rb:119: warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call
 /Users/babslabs/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/sprockets-4.0.0/lib/sprockets/base.rb:78: warning: The called method `find_asset' is defined here
-```  
+```
+
+## Requirements
+ * Ruby version
+ `2.7.0`
+ * Rails Version
+ `6.0.2.2`
+ * React Version
+ `6.13.2`
+
+ ## Contributions
+Interested in contributiong to SumoCity? Go ahead and open a PR!
