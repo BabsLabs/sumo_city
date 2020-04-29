@@ -23,6 +23,8 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Run rake task to import data to development database: `rake import:terms`
 * Start server: `rails s`
 
+*Note* Ruby 2.7.0 generates a number of deprecation warnings when running `rails`, `rake`, and `rspec` commands. These deprecation warnings can be silenced by appending `RUBYOPT='-W:no-deprecated'` to any command. See the [Warnings and Issues](#Warnings-and-Issues) section for more info.
+
 ## Testing
 Testing is currently setup and done with Rspec, Capybara, and Selenium. All tests are continuously integrated with TravisCI.
 
