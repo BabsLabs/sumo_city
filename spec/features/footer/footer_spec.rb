@@ -5,6 +5,7 @@ describe "React Footer testing", :type => :feature, js: true do
     visit('/about')
     within ".footer" do
       expect(page).to have_content("BabsLabs Software 2020")
+      expect(page).to have_css("#babslabs-logo")
     end
   end
 end
