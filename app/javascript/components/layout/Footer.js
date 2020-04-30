@@ -6,7 +6,7 @@ class Footer extends React.Component {
     return (
         <footer className="footer">
           <p>&copy;	BabsLabs Software 2020</p>
-          <img src={babsLabsLogo} id="babslabs-logo" />
+          <img src={babsLabsLogo} id="babslabs-logo" alt="babslabs monkey logo"/>
         </footer>
     );
   }
