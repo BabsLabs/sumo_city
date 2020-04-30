@@ -139,8 +139,13 @@ ul {
   height: 50px;
   text-align: center;
   background-color: var(--reddish-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer p {
-  padding-top: 10px;
+#babslabs-logo {
+  height: 45px;
+  padding-left: 10px;
 }
