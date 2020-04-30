@@ -23,7 +23,7 @@ class HeroSumoWiki extends React.Component {
 }
 
 HeroSumoWiki.propTypes = {
-  term: PropTypes.string
+  term: PropTypes.object
 };
 
 export default HeroSumoWiki
