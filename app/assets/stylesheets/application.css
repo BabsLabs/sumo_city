@@ -19,7 +19,8 @@
   --primary-color: lightblue;
   --secondary-color: black;
   --light-color: cornsilk;
-  --light-color-two: whitesmoke;;
+  --light-color-two: whitesmoke;
+  --reddish-color: #BB4430;
 }
 
 * {
@@ -28,10 +29,20 @@
   padding: 0;
 }
 
-body {
+html, body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--light-color);
   color: var(--secondary-color);
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
 }
 
 a {
@@ -118,4 +129,18 @@ ul {
 
 #heroSumoWiki {
   background-color: var(--light-color-two);
+}
+
+.push {
+  height: 50px;
+}
+
+.footer {
+  height: 50px;
+  text-align: center;
+  background-color: var(--reddish-color);
+}
+
+.footer p {
+  padding-top: 10px;
 }
