@@ -37,9 +37,9 @@ html, body {
   margin: 0;
 }
 
+/* body wrapper - located in application.html.erb */
 .wrapper {
   min-height: 100%;
-
   /* Equal to height of footer */
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
@@ -52,6 +52,8 @@ a {
 ul {
   list-style: none;
 }
+
+/* Nav bar */
 
 .navbar {
   display: flex;
@@ -90,10 +92,14 @@ ul {
   font-size: 2rem;
 }
 
+/* About page */
+
 .about {
   padding: 2rem;
   text-align: center;
 }
+
+/* Index page */
 
 .hero {
   display: grid;
@@ -131,6 +137,7 @@ ul {
   background-color: var(--light-color-two);
 }
 
+/* Footer */
 .push {
   height: 50px;
 }
@@ -148,4 +155,16 @@ ul {
 #babslabs-logo {
   height: 45px;
   padding-left: 10px;
+}
+
+/* SumoWiki (/terms) */
+.term {
+  margin: 25px 50px;
+}
+
+/* banners */
+.banner {
+  padding: 25px;
+  text-align: center;
+  background-color: var(--light-color-two);
 }
