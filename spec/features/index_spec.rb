@@ -17,7 +17,8 @@ describe "React homepage testing", :type => :feature, js: true do
 
     within "#heroSumoWiki" do
       expect(page).to have_content("Learn More About Everything Sumo")  
-      expect(page).to have_content("Use our Sumo Wiki to learn more about the rules, history, and vocab of Sumo.")  
+      expect(page).to have_content("Use the SumoWiki to learn more about the rules, history, and vocabulary of Sumo.")
+      expect(page).to have_link("SumoWiki", :href => "/terms")
       expect(page).to have_content("Featured Term")
       expect(page).to have_content(@term.english_name)
       expect(page).to have_content(@term.japanese_name)
