@@ -17,8 +17,9 @@ namespace :import do
       english_name = split_name[0]
       japanese_name = split_name[1]
       n += 1
-      term = Term.find_or_create_by(english_name: english_name, japanese_name: japanese_name)
-      puts "#{name_text} saved! #{n}" if term.save
+      term = Term.find_or_create_by!(english_name: english_name, japanese_name: japanese_name) do |term|
+        puts "#{term.english_name} saved! #{n}"
+      end
     end
 
     definitions = document.xpath("//dd")
@@ -27,7 +28,7 @@ namespace :import do
       puts "#{definition.text} #{q}"
       definition = definition.text
       term = Term.find(q)
-      term.update(definition: definition)
+      term.update!(definition: definition)
       puts "#{definition} saved! #{q}" if term.save
       q += 1
     end
