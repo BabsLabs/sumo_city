@@ -1,0 +1,4 @@
+<%= react_component 'layout/Banner', { text: "SumoWiki" } %>
+<% @terms.each do |term| %>
+  <%= react_component 'layout/wiki/Term', { term: term } %>
+<% end %>

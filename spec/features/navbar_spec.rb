@@ -7,6 +7,7 @@ describe "React About testing", :type => :feature, js: true do
       expect(page).to have_content("SumoCity")
       expect(page).to have_link("About")
       expect(page).to have_link("Home")
+      expect(page).to have_link("Wiki")
       expect(page).to have_css("#navbar-sumoLogo")
     end
   end

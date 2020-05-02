@@ -8,7 +8,7 @@ class HeroSumoWiki extends React.Component {
         <div className="hero" id="heroSumoWiki">
           <section className="heroText">
             <h1>Learn More About Everything Sumo</h1>
-            <p>Use our Sumo Wiki to learn more about the rules, history, and vocab of Sumo.</p>
+            <p>Use the <a href="/terms">SumoWiki</a> to learn more about the rules, history, and vocabulary of Sumo.</p>
           </section>
           <section className="heroText">
             <h1>Featured Term</h1>
