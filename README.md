@@ -51,6 +51,9 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 - Simplecov
 - shoulda-matchers
 
+### Extensions
+- SASS
+
 ### Database Management
 - Postgresql
 
