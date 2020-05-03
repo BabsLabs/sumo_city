@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700;800&family=Poppins&display=swap');
+
+:root {
+  --primary-color: lightblue;
+  --secondary-color: black;
+  --light-color: cornsilk;
+  --light-color-two: whitesmoke;
+  --reddish-color: #BB4430;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+  height: 100%;
+  margin: 0;
+}
+
+/* body wrapper - located in application.html.erb */
+.wrapper {
+  min-height: 100%;
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Nav bar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: var(--primary-color);
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: 800;
+ 
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding-right:  10px;
+  }
+
+  a {
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  a:hover {
+    color: var(--light-color);
+  }
+}
+
+#navbar-sumoLogo {
+  height: 40px;
+}
+
+#navbar-sumoCity {
+  font-size: 2rem;
+}
+
+/* About page */
+
+.about {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Index page */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+ 
+  h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 2rem;
+  
+  h3, h4 {
+    text-align: center;
+  }
+}
+
+.heroImage {
+  display: grid;
+  justify-items: center;
+  
+  img {
+    width: 70%;
+  }
+}
+
+#heroSumoWiki {
+  background-color: var(--light-color-two);
+}
+
+/* Footer */
+.push {
+  height: 50px;
+}
+
+.footer {
+  height: 50px;
+  text-align: center;
+  background-color: var(--reddish-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#babslabs-logo {
+  height: 45px;
+  padding-left: 10px;
+}
+
+/* SumoWiki (/terms) */
+.term {
+  margin: 25px 50px;
+}
+
+/* banners */
+.banner {
+  padding: 25px;
+  text-align: center;
+  background-color: var(--light-color-two);
+}
