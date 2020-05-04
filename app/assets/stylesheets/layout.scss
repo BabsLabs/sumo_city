@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700;800&family=Poppins&display=swap');
+@import './mixins';
+@import './breakpoints';
 
 :root {
   --primary-color: lightblue;
@@ -88,13 +90,25 @@ ul {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr, 1fr;
   padding: 2rem;
  
   h1 {
     text-align: center;
     padding-bottom: 1rem;
   }
+
+  @include small  {
+      grid-template-columns: 1fr, 1fr;
+    }
+
+  @include medium {
+      grid-template-columns: 1fr, 1fr;
+    }
+
+  @include large {
+      grid-template-columns: 1fr, 1fr;
+    }
 }
 
 .heroText {
