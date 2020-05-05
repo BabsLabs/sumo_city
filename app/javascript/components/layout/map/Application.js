@@ -3,36 +3,34 @@ import PropTypes from "prop-types"
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYmFic2xhYnMiLCJhIjoiY2s4bHM1N2psMGJydTNsbjJmazk1ZDV4cyJ9.Cbx2hJteIro3S_hV480UVQ';
+mapboxgl.accessToken = process.env.MAPBOX_KEY;
 
 class Application extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lng: 5,
-      lat: 34,
-      zoom: 2
-    };
+  componentDidMount()
+  {
+    this.map = new mapboxgl.Map({
+      container: this.mapContainer,
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-104.9966, 39.7508],
+      zoom: 19
+    });
   }
 
   render () {
     return (
-      <div>
-        <div ref={el => this.mapContainer = el} className="mapContainer" />
-      </div>
+      <div style={{
+        height: '84.5%',
+        position: 'absolute',
+        top: '20px',
+        bottom: '0',
+        margin: 'auto',
+        width: '100%'
+      }} ref={el => this.mapContainer = el} />
     )
   }
 
-  componentDidMount() {
-    const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom
-    });
-  }
 }
 
 export default Application
 
-ReactDOM.render(<Application />, document.getElementById('app'));
+ReactDOM.render(<Application />, document.getElementById('map'));
