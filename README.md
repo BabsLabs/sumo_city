@@ -22,6 +22,8 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Create database: `rails db:create`
 * Migrate to development database: `rails db:migrate`
 * Run rake task to import data to development database: `rake import:terms`
+* Add `.env` file to root directory
+* In `.env` file add `MAPBOX_KEY=<your key from mapbox>`
 * Start server: `rails s`
 
 *Note* Ruby 2.7.0 generates a number of deprecation warnings when running `rails`, `rake`, and `rspec` commands. These deprecation warnings can be silenced by appending `RUBYOPT='-W:no-deprecated'` to any command. See the [Warnings and Issues](#Warnings-and-Issues) section for more info.
