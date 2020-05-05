@@ -5,7 +5,7 @@ import mapboxgl from 'mapbox-gl';
 
 mapboxgl.accessToken = process.env.MAPBOX_KEY;
 
-class Application extends React.Component {
+class Map extends React.Component {
   componentDidMount()
   {
     this.map = new mapboxgl.Map({
@@ -31,6 +31,6 @@ class Application extends React.Component {
 
 }
 
-export default Application
+export default Map
 
-ReactDOM.render(<Application />, document.getElementById('map'));
+ReactDOM.render(<Map />, document.getElementById('map'));
