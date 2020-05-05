@@ -17,6 +17,9 @@ class Navbar extends React.Component {
             <li>
               <a href='/terms'>Wiki</a>
             </li>
+            <li>
+              <a href='/explorer'>Explorer</a>
+            </li>
           </ul>
         </nav>
     )
