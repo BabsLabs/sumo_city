@@ -11,8 +11,8 @@ class Map extends React.Component {
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-104.9966, 39.7508],
-      zoom: 19
+      center: [139.8394, 35.6528], // starting position [lng, lat]
+      zoom: 6
     });
   }
 
