@@ -1,28 +1,19 @@
 dist: trusty
-sudo: required
+sudo: false
 addons:
   chrome: stable
   postgresql: "9.6"
-  apt:
-    packages:
-      - chromium-chromedriver
 language: ruby
 rvm:
   - 2.7.0
-  
 services:
   - postgresql
 script:
-  - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
   - RAILS_ENV=test ./bin/rails assets:precompile
   - psql -c 'create database sumo_city_test;' -U postgres
-test:
-  adapter: postgresql
-  database: sumo_city_test
 before_install:
-  - # start your web application and listen on `localhost`
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   - nvm install 8.16.0
 default: &default
@@ -30,7 +21,6 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
-  # You can add here your credentials
 
 development:
   <<: *default
