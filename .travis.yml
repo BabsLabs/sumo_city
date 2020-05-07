@@ -1,7 +1,7 @@
 dist: trusty
 sudo: required
 addons:
-  chrome: stable
+  chrome: beta
   postgresql: "9.6"
   apt:
     packages:
