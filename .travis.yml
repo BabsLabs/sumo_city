@@ -1,7 +1,7 @@
 dist: trusty
 sudo: required
 addons:
-  chrome: beta
+  chrome: stable
   postgresql: "9.6"
   apt:
     packages:
@@ -13,9 +13,12 @@ rvm:
 services:
   - postgresql
 script:
-  - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
+  - CHROME_MAIN_VERSION=`google-chrome-stable --version | sed -E 's/(^Google Chrome |\.[0-9]+ )//g'`
+  - CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAIN_VERSION"`
+  - curl "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O
+  - unzip chromedriver_linux64.zip -d ~/bin
   - RAILS_ENV=test ./bin/rails assets:precompile
   - psql -c 'create database sumo_city_test;' -U postgres
 before_install:
