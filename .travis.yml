@@ -1,5 +1,4 @@
 dist: trusty
-sudo: false
 addons:
   chrome: stable
   postgresql: "9.6"
@@ -15,20 +14,4 @@ before_script:
   - psql -c 'create database sumo_city_test;' -U postgres
 before_install:
   - nvm install 8.16.0
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  timeout: 5000
 
-development:
-  <<: *default
-  database: sumo_city_development
-
-test:
-  <<: *default
-  database: sumo_city_test
-
-production:
-  <<: *default
-  database: sumo_city_production
