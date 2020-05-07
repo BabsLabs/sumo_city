@@ -16,12 +16,8 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
-  - bundle exec chromedriver-update 2.46
   - RAILS_ENV=test ./bin/rails assets:precompile
   - psql -c 'create database sumo_city_test;' -U postgres
-test:
-  adapter: postgresql
-  database: sumo_city_test
 before_install:
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   - nvm install 8.16.0
