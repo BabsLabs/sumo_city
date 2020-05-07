@@ -29,6 +29,7 @@ require 'capybara/dsl'
 #
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.load_selenium
   browser_options = ::Selenium::WebDriver::Chrome::Options.new
   browser_options.args << '--headless'
   browser_options.args << '--disable-gpu'
