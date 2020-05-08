@@ -50,18 +50,14 @@ require "selenium/webdriver"
 
 # Capybara.javascript_driver = :headless_chrome
 
-Capybara.register_driver :selenium_headless do |app|
-  browser_options = ::Selenium::WebDriver::Firefox::Options.new()
-  browser_options.args << '--headless'
-  browser_options.args << '--disable-popup-blocking'
-  browser_options.args << '--window-size=1366,768'
-  browser_options.args << '--no-sandbox'
+Capybara.register_driver :selenium do |app|
 
-  Capybara::Selenium::Driver.new(
-    app,
-    browser: :firefox,
-    options: browser_options
-  )
+  custom_profile = Selenium::WebDriver::Firefox::Profile.new
+
+  # Turn off the super annoying popup!
+  custom_profile["network.http.prompt-temp-redirect"] = false
+
+  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => custom_profile)
 end
 
 # Checks for pending migrations and applies them before tests are run.
