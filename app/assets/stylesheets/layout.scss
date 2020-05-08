@@ -90,7 +90,7 @@ ul {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr, 1fr;
+  grid-template-columns: 1fr;
   padding: 2rem;
  
   h1 {
@@ -99,15 +99,15 @@ ul {
   }
 
   @include small  {
-      grid-template-columns: 1fr, 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
   @include medium {
-      grid-template-columns: 1fr, 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 
   @include large {
-      grid-template-columns: 1fr, 1fr;
+      grid-template-columns: 1fr 1fr;
     }
 }
 
