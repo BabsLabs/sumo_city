@@ -48,7 +48,6 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 - Rspec
 - Capybara
 - Selenium
-- headless chromium webdriver
 - Webpacker
 - Simplecov
 - shoulda-matchers
