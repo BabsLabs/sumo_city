@@ -1,6 +1,6 @@
 dist: trusty
 addons:
-  firefox: "49.0"
+  firefox: latest
   postgresql: "9.6"
 language: ruby
 rvm:
