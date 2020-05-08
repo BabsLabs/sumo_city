@@ -1,6 +1,5 @@
-dist: trusty
 addons:
-  firefox: latest
+  chrome: stable
   postgresql: "9.6"
 language: ruby
 rvm:
