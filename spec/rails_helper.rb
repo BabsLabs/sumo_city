@@ -31,34 +31,36 @@ require 'capybara/dsl'
 # https://www.reddit.com/r/ruby/comments/8d6vdb/capybara_rails_chromeheadless_on_travis/
 require "selenium/webdriver"
 
-# Capybara.register_driver :chrome do |app|
-#   Capybara::Selenium::Driver.new(app, browser: :chrome)
-# end
-
-# Capybara.register_driver :headless_chrome do |app|
-#   options = Selenium::WebDriver::Chrome::Options.new
-
-#   options.add_argument('--headless')
-#   options.add_argument('--no-sandbox')
-#   options.add_argument('--disable-popup-blocking')
-#   options.add_argument('--window-size=1366,768')
-
-#   driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
-
-#   driver
-# end
-
-# Capybara.javascript_driver = :headless_chrome
-
-Capybara.register_driver :selenium do |app|
-
-  custom_profile = Selenium::WebDriver::Firefox::Profile.new
-
-  # Turn off the super annoying popup!
-  custom_profile["network.http.prompt-temp-redirect"] = false
-
-  Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => custom_profile)
+# CHROME SETUP:
+Capybara.register_driver :chrome do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
+
+Capybara.register_driver :headless_chrome do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+
+  options.add_argument('--headless')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-popup-blocking')
+  options.add_argument('--window-size=1366,768')
+
+  driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+
+  driver
+end
+
+Capybara.javascript_driver = :headless_chrome
+
+# FIREFOX SETUP:
+# Capybara.register_driver :selenium do |app|
+
+#   custom_profile = Selenium::WebDriver::Firefox::Profile.new
+
+#   # Turn off the super annoying popup!
+#   custom_profile["network.http.prompt-temp-redirect"] = false
+
+#   Capybara::Selenium::Driver.new(app, :browser => :firefox, :profile => custom_profile)
+# end
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
