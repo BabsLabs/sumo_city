@@ -11,7 +11,7 @@ const stableGeoJSON = {
         ]
       },
     properties: {
-      title: 'Miyagino stable',
+      title: 'Miyagino',
       description: "Miyagino sumo stable. Hakuhō Shō's stable",
       url: 'https: //en.wikipedia.org/wiki/Miyagino_stable',
       address: '2 Chome-16-10 Yahiro, Sumida City, Tokyo 131-0041, Japan'
@@ -27,7 +27,7 @@ const stableGeoJSON = {
         ]
       },
     properties: {
-      title: 'Arashio-beya stable',
+      title: 'Arashio-beya',
       description: 'Arashio-beya Sumo stable.',
       url: 'http: //arashio.net/tour_e.html',
       address: '2 Chome-47-2 Nihonbashihamacho, Chuo City, Tokyo 103-0007, Japan'
