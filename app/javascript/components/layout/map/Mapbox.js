@@ -50,9 +50,26 @@ class Mapbox extends Component {
             "visibility": 'visible'
           }}
           circlePaint={{
-            'circle-color': 'blue',
-            'circle-radius': 5
-          }}
+            // color circles by stable title, using a match expression
+            // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
+            'circle-color':
+                          [
+                          'match',
+                ['get', 'title'],
+                          'Miyagino',
+                          '#fbb03b',
+                          'Arashio-beya',
+                          '#223b53',
+                          /* other */ '#ccc'
+                          ],
+            // make circles larger as the user zooms from z12 to z22
+            'circle-radius': {
+                          'base': 6,
+                          'stops': [
+                            [12, 7],
+                            [22, 180]
+                          ]
+          }}}
           />
       </Map>
     )
