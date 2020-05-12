@@ -16,8 +16,8 @@ const Map = ReactMapboxGl({
 //       coordinates: [139.825096, 35.715732]
 //     },
 //     properties: {
-//       title: 'Mapbox',
-//       description: 'Washington, D.C.',
+//       title: 'Miyagino stable',
+//       description: 'Miyagino stable',
 //       icon: 'monument'
 //     }
 //   }]
