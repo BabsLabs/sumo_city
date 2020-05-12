@@ -38,14 +38,6 @@ class Mapbox extends Component {
       >
         <GeoJSONLayer
           data={stableGeoJSON}
-          symbolLayout={{
-            "text-field": "{place}",
-            "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-            "text-offset": [0, 0.6],
-            "text-anchor": "top",
-          }}
-          symbolPaint = {{
-          }}
           circleLayout={{
             "visibility": 'visible'
           }}
