@@ -2,26 +2,11 @@ import React from 'react'
 import ReactMapboxGl, { Marker, GeoJSONLayer, Popup } from 'react-mapbox-gl'
 import { Component } from 'react'
 import stableLogo from '../../images/SumoLogo.png'
+import stableGeoJSON from '../../../../../db/data/stableGeoJSON';
 
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_KEY
 });
-
-// const geojson = {
-//   type: 'FeatureCollection',
-//   features: [{
-//     type: 'Feature',
-//     geometry: {
-//       type: 'Point',
-//       coordinates: [139.825096, 35.715732]
-//     },
-//     properties: {
-//       title: 'Miyagino stable',
-//       description: 'Miyagino stable',
-//       icon: 'monument'
-//     }
-//   }]
-// };
 
 class Mapbox extends Component {
   
@@ -51,39 +36,23 @@ class Mapbox extends Component {
             [151.6734, 46.4156]] // Northeast coordinates;
         }
       >
-        <Marker
-          coordinates={[139.825096, 35.715732]}
-          anchor="bottom"
-          // onClick={() => event_to_take_place_on_click }
-          >
-          <img src={stableLogo} style={{ height: "35px", backgroundColor: "mediumPurple", borderRadius: "3px" }} />
-        </Marker>
-        <Popup
-          coordinates={[139.825096, 35.715732]}
-          offset={{
-            'bottom-left': [12, -38], 'bottom': [0, -38], 'bottom-right': [-12, -38]
-          }}
-          >
-          <h2>Miyagino stable</h2>
-        </Popup>
-        {/* <GeoJSONLayer
-          data={geojson}
+        <GeoJSONLayer
+          data={stableGeoJSON}
           symbolLayout={{
             "text-field": "{place}",
             "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
             "text-offset": [0, 0.6],
             "text-anchor": "top",
-            'text-color': 'red'
           }}
           symbolPaint = {{
-            'text-color': 'red'
           }}
           circleLayout={{
             "visibility": 'visible'
           }}
           circlePaint={{
-            'circle-color': 'red'
-          }} */}
+            'circle-color': 'blue',
+            'circle-radius': 5
+          }}
           />
       </Map>
     )
