@@ -41,7 +41,7 @@ class Mapbox extends Component {
       <Map
         style="mapbox://styles/mapbox/streets-v11"
         containerStyle={{
-          height: '85vh',
+          height: '85.5vh',
           width: '100vw'
         }}
         center={[this.state.lng, this.state.lat]}
