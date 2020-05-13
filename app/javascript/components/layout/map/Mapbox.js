@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
 import ReactMapboxGl, { Marker, GeoJSONLayer, Popup } from 'react-mapbox-gl'
-import stableLogo from '../../images/SumoLogo.png'
-import stableGeoJSON from '../../../../../db/data/stableGeoJSON';
 
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_KEY
