@@ -18,8 +18,8 @@ namespace :import do
                                         phone: row[5],
                                         closest_stations: row[6],
                                         website: row[7],
-                                        hexcolor: row[8],
-                                        description: row[9],
+                                        description: row[8],
+                                        hexcolor: row[9],
                                         lon: long,
                                         lat: latt,
                                         other_info: row[11])
