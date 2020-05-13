@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from "prop-types"
 import ReactMapboxGl, { Marker, GeoJSONLayer, Popup } from 'react-mapbox-gl'
-import { Component } from 'react'
 import stableLogo from '../../images/SumoLogo.png'
 import stableGeoJSON from '../../../../../db/data/stableGeoJSON';
 
@@ -22,6 +22,12 @@ class Mapbox extends Component {
   }
 
   render() {
+    
+    const mapbox_geojson = {
+      type: 'FeatureCollection',
+      features: this.props.geojson
+    };
+
     return (
       <Map
         style="mapbox://styles/mapbox/streets-v11"
@@ -36,24 +42,16 @@ class Mapbox extends Component {
             [151.6734, 46.4156]] // Northeast coordinates;
         }
       >
+        
         <GeoJSONLayer
-          data={stableGeoJSON}
+          data={mapbox_geojson}
           circleLayout={{
             "visibility": 'visible'
           }}
           circlePaint={{
             // color circles by stable title, using a match expression
             // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color':
-                          [
-                          'match',
-                ['get', 'title'],
-                          'Miyagino-beya',
-                          '#fbb03b',
-                          'Arashio-beya',
-                          '#223b53',
-                          /* other */ '#ccc'
-                          ],
+            'circle-color':/* other */ '#223b53',
             // make circles larger as the user zooms from z12 to z22
             'circle-radius': {
                           'base': 6,
@@ -67,5 +65,9 @@ class Mapbox extends Component {
     )
   }
 }
+
+Mapbox.propTypes = {
+  stables: PropTypes.array
+};
 
 export default Mapbox
