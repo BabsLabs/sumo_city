@@ -21,7 +21,8 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Install dependencies: `bundle install`
 * Create database: `rails db:create`
 * Migrate to development database: `rails db:migrate`
-* Run rake task to import data to development database: `rake import:terms`
+* Run rake task to import term data to development database: `rake import:terms`
+* Run rake task to import stable data to development database: `rake import:stables`
 * Add `.env` file to root directory
 * In `.env` file add `MAPBOX_KEY=<your key from mapbox>`
 * Start server: `rails s`
