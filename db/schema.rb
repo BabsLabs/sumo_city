@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_003244) do
+ActiveRecord::Schema.define(version: 2020_05_13_033854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "stables", force: :cascade do |t|
+    t.string "title"
+    t.string "ichimon"
+    t.string "founded"
+    t.string "address"
+    t.string "address_jp"
+    t.string "phone"
+    t.string "closest_stations"
+    t.string "website"
+    t.string "hexcolor"
+    t.string "description"
+    t.float "lon"
+    t.float "lat"
+    t.string "other_info"
+  end
 
   create_table "terms", force: :cascade do |t|
     t.string "english_name"
