@@ -48,7 +48,7 @@ class Mapbox extends Component {
                           [
                           'match',
                 ['get', 'title'],
-                          'Miyagino',
+                          'Miyagino-beya',
                           '#fbb03b',
                           'Arashio-beya',
                           '#223b53',
