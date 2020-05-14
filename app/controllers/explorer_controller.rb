@@ -11,10 +11,8 @@ class ExplorerController < ApplicationController
           coordinates: [stable.lon, stable.lat]
         },
         properties: {
-          tile: stable.title,
-          # :'marker-color' => stable.hexcolor,
-          # :'marker-symbol' => 'circle',
-          # :'marker-size' => 'medium'
+          title: stable.title,
+          color: stable.hexcolor
         }
       }
     end
