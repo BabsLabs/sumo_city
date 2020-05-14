@@ -49,7 +49,7 @@ class Mapbox extends Component {
           circlePaint={{
             // color circles by stable title, using a match expression
             // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color':/* other */ '#223b53',
+            'circle-color': ['get', 'color'],
             // make circles larger as the user zooms from z12 to z22
             'circle-radius': {
                           'base': 6,
