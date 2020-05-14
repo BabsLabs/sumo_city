@@ -1,10 +1,10 @@
 class ExplorerController < ApplicationController
   def index
     @stables = Stable.all
-    @geojson = Array.new
+    @geojson_features = Array.new
     
     @stables.each do |stable|
-      @geojson << {
+      @geojson_features << {
         type: 'Feature',
         geometry: {
           type: 'Point',
@@ -19,7 +19,7 @@ class ExplorerController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @geojson }  # respond with the created JSON object
+      format.json { render json: @geojson_features }  # respond with the created JSON object
     end
 
 

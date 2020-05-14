@@ -23,7 +23,7 @@ class Mapbox extends Component {
     
     const mapbox_geojson = {
       type: 'FeatureCollection',
-      features: this.props.geojson
+      features: this.props.geojson_features
     };
 
     return (
@@ -65,7 +65,7 @@ class Mapbox extends Component {
 }
 
 Mapbox.propTypes = {
-  stables: PropTypes.array
+  geojson_features: PropTypes.array
 };
 
 export default Mapbox
