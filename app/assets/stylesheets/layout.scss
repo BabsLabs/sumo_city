@@ -4,7 +4,7 @@
 
 :root {
   --primary-color: lightblue;
-  --secondary-color: black;
+  --secondary-color: #21222A;
   --light-color: cornsilk;
   --light-color-two: whitesmoke;
   --reddish-color: #BB4430;
@@ -41,7 +41,6 @@ ul {
 }
 
 /* Nav bar */
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -50,9 +49,15 @@ ul {
   width: 100%;
   padding: 10px 10px;
   background-color: var(--primary-color);
-  font-family: 'Baloo Thambi 2', cursive;
-  font-weight: 800;
- 
+}
+
+#desktop-navbar {
+  display: none;
+
+  @include medium {
+    display: contents;
+  }
+
   ul {
     display: flex;
   }
@@ -72,22 +77,111 @@ ul {
 }
 
 #navbar-sumoLogo {
-  height: 40px;
+  display: none;
+
+  @include medium {
+    height: 40px;
+    display: inline;
+  }
 }
 
 #navbar-sumoCity {
   font-size: 2rem;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: 800;
+}
+
+/* Mobile Hamburger Menu Styles */
+#hamburger-menu {
+   @include medium {
+      display: none;
+    }
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 20px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: var(--secondary-color);
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: var(--light-color);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: var(--primary-color);
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100vw;
+  top: 0px;
+  left: 0px;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: var(--secondary-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: var(--secondary-color);
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: var(--light-color-two);
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  color: var(--primary-color);
+  padding: 5px;
+  font-weight: bold;
+}
+.bm-item:hover {
+  color: var(--light-color);
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0px;
+  left: 0px;
 }
 
 /* About page */
-
 .about {
   padding: 2rem;
   text-align: center;
 }
 
 /* Index page */
-
 .hero {
   display: grid;
   grid-template-columns: 1fr;
