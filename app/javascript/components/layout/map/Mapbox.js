@@ -28,7 +28,7 @@ class Mapbox extends Component {
 
     return (
       <Map
-        style="mapbox://styles/mapbox/streets-v11"
+        style="mapbox://styles/mapbox/light-v10"
         containerStyle={{
           height: '85.5vh',
           width: '100vw'
