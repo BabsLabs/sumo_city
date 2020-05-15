@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700;800&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700;800&family=Poppins:wght@400;700&display=swap');
 @import './mixins';
 @import './breakpoints';
 
@@ -120,6 +120,10 @@ ul {
   
   h3, h4 {
     text-align: center;
+  }
+  
+  a {
+    font-weight: 800;
   }
 }
 
