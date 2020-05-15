@@ -1,27 +1,46 @@
 import React from "react"
 import sumoLogo from "../images/SumoLogo"
+import { slide as Menu } from 'react-burger-menu'
 
 class Navbar extends React.Component {
+  showSettings(event) {
+    event.preventDefault();
+  }
+
   render () {
+
+    
     return (
-        <nav className="navbar">
-          <img src={sumoLogo} id="navbar-sumoLogo"/>
-          <h1 id="navbar-sumoCity">SumoCity</h1>
+      <nav className="navbar">
+        <div id="hamburger-menu">
+          <Menu>
+            <a id="home" className="menu-item" href="/">Home</a>
+            <a id="explorer" className="menu-item" href="/explorer">Explorer</a>
+            <a id="wiki" className="menu-item" href="/terms">Wiki</a>
+            <a id="about" className="menu-item" href="/about">About</a>
+          </Menu>
+        </div>
+
+        <img src={sumoLogo} id="navbar-sumoLogo"/>
+        <h1 id="navbar-sumoCity">SumoCity</h1>
+
+        <div id="desktop-navbar">
           <ul>
             <li>
               <a href='/'>Home</a>
             </li>
             <li>
-              <a href='/about'>About</a>
+              <a href='/explorer'>Explorer</a>
             </li>
             <li>
               <a href='/terms'>Wiki</a>
             </li>
             <li>
-              <a href='/explorer'>Explorer</a>
+              <a href='/about'>About</a>
             </li>
           </ul>
-        </nav>
+        </div>
+      </nav>
     )
   }
 }
