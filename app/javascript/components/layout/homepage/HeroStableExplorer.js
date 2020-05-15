@@ -1,5 +1,4 @@
 import React from "react"
-import DemoMapboxImage from "../../images/DemoMapboxImage"
 import Mapbox from "../map/Mapbox";
 
 class HeroStableExplorer extends React.Component {
