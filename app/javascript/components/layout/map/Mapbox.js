@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import ReactMapboxGl, { Marker, GeoJSONLayer, Popup } from 'react-mapbox-gl'
+import ReactMapboxGl, { GeoJSONLayer } from 'react-mapbox-gl'
 
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_KEY

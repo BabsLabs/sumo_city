@@ -11,8 +11,11 @@ describe "React homepage testing", :type => :feature, js: true do
       expect(page).to have_content("Stable Explorer")
       expect(page).to have_content("The place where Sumos train is called a Stable.")
       expect(page).to have_content("Use the interactive Stable Explorer to learn more about the stables of all your favorite sumo wrestlers.")
-      expect(page.find('#heroMapboxImage')['src']).to have_content('DemoMapboxImage-f20bd96828d8c87fdf7b9e69d18de416.png')
-      expect(page.find('#heroMapboxImage')['alt']).to eq('MapboxImage')
+
+      within ".heroMap" do
+        expect(page).to have_css(".mapboxgl-map")
+        expect(page).to have_css(".mapboxgl-control-container")
+      end
     end
 
     within "#heroSumoWiki" do

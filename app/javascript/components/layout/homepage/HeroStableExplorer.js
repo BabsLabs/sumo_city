@@ -1,12 +1,13 @@
 import React from "react"
 import DemoMapboxImage from "../../images/DemoMapboxImage"
+import Mapbox from "../map/Mapbox";
 
 class HeroStableExplorer extends React.Component {
   render() {
     return (
       <div className="hero" id="heroStableExplorer">
-          <section className="heroImage">
-            <img src={DemoMapboxImage} alt="MapboxImage" id="heroMapboxImage"/>
+          <section className="heroMap">
+            <Mapbox geojson_features={this.props.geojson_features} className="homepageMap"/>
           </section>
           <section className="heroText">
             <h1>Stable Explorer</h1>
