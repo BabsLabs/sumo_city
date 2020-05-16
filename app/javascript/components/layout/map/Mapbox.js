@@ -56,8 +56,6 @@ class Mapbox extends React.Component {
       type: 'FeatureCollection',
       features: this.props.geojson_features
     };
-  
-    console.log(this.state.selectedMarker);
 
     return (
       <Map
@@ -72,6 +70,7 @@ class Mapbox extends React.Component {
           [[127.5571, 30.5969], // Southwest coordinates
           [151.6734, 46.4156]] // Northeast coordinates;
         }
+        onClick={this.closePopup}
       >
         {this.loadStables()}
         {this.state.selectedMarker !== null ? (
