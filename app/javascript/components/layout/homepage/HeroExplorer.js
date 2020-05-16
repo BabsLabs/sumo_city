@@ -1,20 +1,26 @@
 import React from "react"
-import Mapbox from "../map/Mapbox";
+import Mapbox from "../map/Mapbox"
+import PropTypes from "prop-types"
 
-class HeroStableExplorer extends React.Component {
+class HeroExplorer extends React.Component {
   render() {
     return (
-      <div className="hero" id="heroStableExplorer">
-          <section className="heroMap">
-            <Mapbox geojson_features={this.props.geojson_features} className="homepageMap"/>
-          </section>
+      <div className="hero" id="heroExplorer">
           <section className="heroText">
             <h1>SumoCity Explorer</h1>
             <p>Use the interactive <a href="/explorer">SumoCity Explorer</a> to learn more about the stables of all your favorite sumo wrestlers.</p>
+          </section>
+          <section className="heroMap">
+              <Mapbox geojson_features={this.props.geojson_features} stables={this.props.stables} className="homepageMap"/>
           </section>
       </div>
     )
   }
 }
 
-export default HeroStableExplorer
+HeroExplorer.propTypes = {
+  geojson_features: PropTypes.array,
+  stables: PropTypes.array
+}
+
+export default HeroExplorer
