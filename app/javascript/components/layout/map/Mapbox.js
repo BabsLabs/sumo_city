@@ -1,30 +1,63 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import ReactMapboxGl, { GeoJSONLayer } from 'react-mapbox-gl'
+import ReactMapboxGl, { GeoJSONLayer, Marker, Popup } from 'react-mapbox-gl'
+import sumoMarker from "../../images/SumoMarker.png"
 
 const Map = ReactMapboxGl({
-  accessToken: process.env.MAPBOX_KEY
+  accessToken: process.env.MAPBOX_ACCESS_TOKEN
 });
 
-class Mapbox extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      /* Note: Coordinates must be in longitude, latitude coordinate order (as opposed to latitude, longitude) 
-      to match GeoJSON (source: https://www.mapbox.com/mapbox-gl-js/api/#lnglat). */
-      lng: 139.8394,
+
+class Mapbox extends React.Component {
+    state = {
+      stables: this.props.stables,
+      selectedMarker: null,
       lat: 35.6528,
+      lon: 139.8394,
       zoom: 8
-    };
-  }
+    }
+  
+  loadStables = () => {
+    return this.state.stables.map(stable => {
+      return (
+        <Marker
+          key={stable.title}
+          coordinates={[stable.lon, stable.lat]}
+          anchor="bottom">
+          <img src={sumoMarker} style={{
+            "height": "30px",
+            "borderRadius": "50%",
+            "backgroundColor": stable.hexcolor
+          }}
+          onClick={() => {
+            this.setSelectedMarker(stable)
+          }} />
+        </Marker>
+      )
+    })
+  };
+
+  setSelectedMarker = object => {
+    this.setState({
+      selectedMarker: object,
+      lon: object.lon,
+      lat: object.lat,
+    });
+  };
+
+  closePopup = () => {
+    this.setState({
+      selectedMarker: null
+    });
+  };
 
   render() {
-    
-    const mapbox_geojson = {
+    const mapbox_geojson_data = {
       type: 'FeatureCollection',
       features: this.props.geojson_features
     };
+  
+    console.log(this.state.selectedMarker);
 
     return (
       <Map
@@ -33,44 +66,46 @@ class Mapbox extends Component {
           height: '85.5vh',
           width: '100vw'
         }}
-        center={[this.state.lng, this.state.lat]}
+        center={[this.state.lon, this.state.lat]}
         zoom={[this.state.zoom]}
         maxBounds={
           [[127.5571, 30.5969], // Southwest coordinates
-            [151.6734, 46.4156]] // Northeast coordinates;
+          [151.6734, 46.4156]] // Northeast coordinates;
         }
       >
+        {this.loadStables()}
+        {this.state.selectedMarker !== null ? (
+          <Popup
+            style={{ borderTop: "5px solid", borderColor: this.state.selectedMarker.hexcolor }}
+            coordinates={[this.state.selectedMarker.lon, this.state.selectedMarker.lat]}
+            offset={{
+              'bottom-left': [12, -38], 'bottom': [0, -38], 'bottom-right': [-12, -38]
+            }}>
+            <h1>{this.state.selectedMarker.title}</h1>
+            <p>Address: {this.state.selectedMarker.address}</p>
+            <p>{this.state.selectedMarker.address_jp}</p>
+            <p>Founded: {this.state.selectedMarker.founded}</p>
+            <p>Ichimon: {this.state.selectedMarker.ichimon}</p>
+            <p>Website: {this.state.selectedMarker.website}</p>
+          </Popup>
+        ) : null}
         <GeoJSONLayer
-          data={mapbox_geojson}
+          data={mapbox_geojson_data}
           symbolLayout={{
             "text-field": "{title}",
             "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
             "text-offset": [0, 0.6],
             "text-anchor": "top",
           }}
-          circleLayout={{
-            "visibility": 'visible'
-          }}
-          circlePaint={{
-            // color circles by stable title, using a match expression
-            // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-            'circle-color': ['get', 'color'],
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-                          'base': 6,
-                          'stops': [
-                            [12, 7],
-                            [22, 180]
-                          ]
-          }}}
-          />
-      </Map>
+        />
+        </Map>
     )
   }
 }
 
 Mapbox.propTypes = {
-  geojson_features: PropTypes.array
+  geojson_features: PropTypes.array,
+  stables: PropTypes.array
 };
 
 export default Mapbox
