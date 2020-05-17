@@ -26,14 +26,14 @@ class Mapbox extends React.Component {
           key={stable.title}
           coordinates={[stable.lon, stable.lat]}
           anchor="bottom">
-          <img src={sumoMarker} style={{
-            "height": "30px",
-            "borderRadius": "50%",
-            "backgroundColor": stable.hexcolor
-          }}
-          onClick={() => {
-            this.setSelectedMarker(stable)
-          }} />
+            <img src={sumoMarker} style={{
+              "height": "30px",
+              "borderRadius": "50%",
+              "backgroundColor": stable.hexcolor
+            }}
+            onClick={() => {
+              this.setSelectedMarker(stable)
+            }} />
         </Marker>
       )
     })
@@ -65,9 +65,10 @@ class Mapbox extends React.Component {
       
       <Map
         style="mapbox://styles/mapbox/light-v10"
+      
         containerStyle={{
-          height: '85.5vh',
-          width: '100vw'
+          height: this.props.height,
+          width: this.props.width
         }}
         center={[this.state.lon, this.state.lat]}
         zoom={[this.state.zoom]}
@@ -109,7 +110,9 @@ class Mapbox extends React.Component {
 
 Mapbox.propTypes = {
   geojson_features: PropTypes.array,
-  stables: PropTypes.array
+  stables: PropTypes.array,
+  height: PropTypes.string,
+  width: PropTypes.string
 };
 
 export default Mapbox
