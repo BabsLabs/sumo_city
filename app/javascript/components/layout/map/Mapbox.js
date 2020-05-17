@@ -4,6 +4,8 @@ import ReactMapboxGl, { GeoJSONLayer, Marker, Popup } from 'react-mapbox-gl'
 import sumoMarker from "../../images/SumoMarker.png"
 
 const Map = ReactMapboxGl({
+  minZoom: 5,
+  maxZoom: 18,
   accessToken: process.env.MAPBOX_ACCESS_TOKEN
 });
 
@@ -42,6 +44,7 @@ class Mapbox extends React.Component {
       selectedMarker: object,
       lon: object.lon,
       lat: object.lat,
+      zoom: 15
     });
   };
 
@@ -51,6 +54,7 @@ class Mapbox extends React.Component {
     });
   };
 
+  
   render() {
     const mapbox_geojson_data = {
       type: 'FeatureCollection',
@@ -58,6 +62,7 @@ class Mapbox extends React.Component {
     };
 
     return (
+      
       <Map
         style="mapbox://styles/mapbox/light-v10"
         containerStyle={{
@@ -71,7 +76,7 @@ class Mapbox extends React.Component {
           [151.6734, 46.4156]] // Northeast coordinates;
         }
         onClick={this.closePopup}
-      >
+      > 
         {this.loadStables()}
         {this.state.selectedMarker !== null ? (
           <Popup
