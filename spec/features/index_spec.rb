@@ -7,7 +7,7 @@ describe "React homepage testing", :type => :feature, js: true do
     visit('/')
     expect(page.title).to have_content("SumoCity")
 
-    within "#heroStableExplorer" do     
+    within "#heroExplorer" do     
       expect(page).to have_content("SumoCity Explorer")
       expect(page).to have_content("Use the interactive SumoCity Explorer to learn more about the stables of all your favorite sumo wrestlers.")
       expect(page).to have_link("SumoCity Explorer", :href => "/explorer")
