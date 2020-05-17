@@ -29,6 +29,10 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 
 *Note* Ruby 2.7.0 generates a number of deprecation warnings when running `rails`, `rake`, and `rspec` commands. These deprecation warnings can be silenced by appending `RUBYOPT='-W:no-deprecated'` to any command. See the [Warnings and Issues](#Warnings-and-Issues) section for more info.
 
+### Environment Variables
+You need the following mapbox variables configured in your `.env` file
+* `MAPBOX_ACCESS_TOKEN = "your_map_box_token`
+
 ## Testing
 Testing is currently setup and done with Rspec, Capybara, and Selenium. All tests are continuously integrated with TravisCI.
 
@@ -56,6 +60,7 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 
 ### Extensions
 - SASS
+- Mapbox-Gl / react-map-gl
 
 ### Database Management
 - Postgresql
