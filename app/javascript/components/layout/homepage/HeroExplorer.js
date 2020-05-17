@@ -1,6 +1,7 @@
 import React from "react"
 import Mapbox from "../map/Mapbox"
 import PropTypes from "prop-types"
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 class HeroExplorer extends React.Component {
   render() {
