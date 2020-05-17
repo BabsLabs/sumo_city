@@ -228,14 +228,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 }
 
-.heroMap { 
-  .mapboxgl-map{
-  display: grid;
-  justify-items: center;
-  width: 100% !important;
-  height: 100% !important;
-}}
-
 #heroSumoWiki {
   background-color: var(--light-color-two);
 }
