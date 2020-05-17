@@ -219,15 +219,6 @@ Note: Beware of modifying this element as it can break the animations - you shou
   }
 }
 
-.heroImage {
-  display: grid;
-  justify-items: center;
-  
-  img {
-    width: 70%;
-  }
-}
-
 #heroSumoWiki {
   background-color: var(--light-color-two);
 }
