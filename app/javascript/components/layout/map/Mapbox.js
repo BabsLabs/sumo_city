@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
 import sumoMarker from "../../images/SumoMarker.png"
-import MapGL, { Marker, Popup, Source, Layer } from '@urbica/react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import MapGL, { Marker, Popup, Source, Layer } from '@urbica/react-map-gl';
 
 class Mapbox extends React.Component {
     state = {
@@ -63,7 +63,7 @@ class Mapbox extends React.Component {
     return (
       <MapGL
         style={{ width: this.props.width, height: this.props.height }}
-        mapStyle='mapbox://styles/mapbox/light-v10'
+        mapStyle='mapbox://styles/mapbox/light-v10?optimize=true'
         accessToken={process.env.MAPBOX_ACCESS_TOKEN}
         latitude={this.state.viewport.latitude}
         longitude={this.state.viewport.longitude}
