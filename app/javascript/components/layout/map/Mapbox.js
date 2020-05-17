@@ -61,7 +61,7 @@ class Mapbox extends React.Component {
     };
 
     return (
-      
+      <div className="map-wrapper">
       <MapGL
         style={{ width: this.props.width, height: this.props.height }}
         mapStyle='mapbox://styles/mapbox/light-v10'
@@ -119,6 +119,7 @@ class Mapbox extends React.Component {
           }}
         />
         </MapGL>
+      </div>
     )
   }
 }
