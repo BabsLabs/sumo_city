@@ -36,7 +36,6 @@ class Mapbox extends React.Component {
   };
 
   setSelectedMarker = object => {
-    console.log(this.state)
     this.setState({
       selectedMarker: object,
       viewport: {
