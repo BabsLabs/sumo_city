@@ -1,22 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import ReactMapboxGl, { GeoJSONLayer, Marker, Popup } from 'react-mapbox-gl'
 import sumoMarker from "../../images/SumoMarker.png"
-
-const Map = ReactMapboxGl({
-  minZoom: 5,
-  maxZoom: 18,
-  accessToken: process.env.MAPBOX_ACCESS_TOKEN
-});
-
+import 'mapbox-gl/dist/mapbox-gl.css';
+import MapGL, { Marker, Popup, Source, Layer } from '@urbica/react-map-gl';
 
 class Mapbox extends React.Component {
     state = {
+      viewport : {
+        latitude: 35.6528,
+        longitude: 139.8394,
+        zoom: 8
+      },
       stables: this.props.stables,
-      selectedMarker: null,
-      lat: 35.6528,
-      lon: 139.8394,
-      zoom: 8
+      selectedMarker: null
     }
   
   loadStables = () => {
@@ -24,27 +20,30 @@ class Mapbox extends React.Component {
       return (
         <Marker
           key={stable.title}
-          coordinates={[stable.lon, stable.lat]}
-          anchor="bottom">
-          <img src={sumoMarker} style={{
-            "height": "30px",
-            "borderRadius": "50%",
-            "backgroundColor": stable.hexcolor
-          }}
-          onClick={() => {
-            this.setSelectedMarker(stable)
-          }} />
+          latitude={stable.lat}
+          longitude={stable.lon}>
+            <img src={sumoMarker} style={{
+              "height": "30px",
+              "borderRadius": "50%",
+              "backgroundColor": stable.hexcolor
+            }}
+            onClick={() => {
+              this.setSelectedMarker(stable)
+            }} />
         </Marker>
       )
     })
   };
 
   setSelectedMarker = object => {
+    console.log(this.state)
     this.setState({
       selectedMarker: object,
-      lon: object.lon,
-      lat: object.lat,
-      zoom: 15
+      viewport: {
+        latitude: object.lat,
+        longitude: object.lon,
+        zoom: 15
+      }
     });
   };
 
@@ -62,29 +61,42 @@ class Mapbox extends React.Component {
     };
 
     return (
-      
-      <Map
-        style="mapbox://styles/mapbox/light-v10"
-        containerStyle={{
-          height: '85.5vh',
-          width: '100vw'
-        }}
-        center={[this.state.lon, this.state.lat]}
-        zoom={[this.state.zoom]}
+      <MapGL
+        style={{ width: this.props.width, height: this.props.height }}
+        mapStyle='mapbox://styles/mapbox/light-v10?optimize=true'
+        accessToken={process.env.MAPBOX_ACCESS_TOKEN}
+        latitude={this.state.viewport.latitude}
+        longitude={this.state.viewport.longitude}
+        zoom={this.state.viewport.zoom}
+        onViewportChange={viewport => this.setState({ viewport })}
+        {...this.state.viewport}
         maxBounds={
           [[127.5571, 30.5969], // Southwest coordinates
           [151.6734, 46.4156]] // Northeast coordinates;
         }
+        minZoom={5}
+        maxZoom={18}
+        viewportChangeMethod={"flyTo"}
         onClick={this.closePopup}
-      > 
+        > 
         {this.loadStables()}
         {this.state.selectedMarker !== null ? (
           <Popup
             style={{ borderTop: "5px solid", borderColor: this.state.selectedMarker.hexcolor }}
-            coordinates={[this.state.selectedMarker.lon, this.state.selectedMarker.lat]}
+            latitude={this.state.selectedMarker.lat}
+            longitude={this.state.selectedMarker.lon}
             offset={{
               'bottom-left': [12, -38], 'bottom': [0, -38], 'bottom-right': [-12, -38]
             }}>
+            <hr style={{
+              "display": "block",
+              "height": "1px",
+              "border": "0",
+              "borderTop": "5px solid",
+              "borderColor": this.state.selectedMarker.hexcolor,
+              "margin": "1em 0",
+              "padding": "0",
+              }}></hr>
             <h1>{this.state.selectedMarker.title}</h1>
             <p>Address: {this.state.selectedMarker.address}</p>
             <p>{this.state.selectedMarker.address_jp}</p>
@@ -93,23 +105,28 @@ class Mapbox extends React.Component {
             <p>Website: {this.state.selectedMarker.website}</p>
           </Popup>
         ) : null}
-        <GeoJSONLayer
-          data={mapbox_geojson_data}
-          symbolLayout={{
+        <Source id='stables' type='geojson' data={mapbox_geojson_data} />
+        <Layer
+          id='stables'
+          type='symbol'
+          source='stables'
+          layout={{
             "text-field": "{title}",
             "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
             "text-offset": [0, 0.6],
             "text-anchor": "top",
           }}
         />
-        </Map>
+        </MapGL>
     )
   }
 }
 
 Mapbox.propTypes = {
   geojson_features: PropTypes.array,
-  stables: PropTypes.array
+  stables: PropTypes.array,
+  height: PropTypes.string,
+  width: PropTypes.string
 };
 
 export default Mapbox

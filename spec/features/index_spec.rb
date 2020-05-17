@@ -12,7 +12,7 @@ describe "React homepage testing", :type => :feature, js: true do
       expect(page).to have_content("Use the interactive SumoCity Explorer to learn more about the stables of all your favorite sumo wrestlers.")
       expect(page).to have_link("SumoCity Explorer", :href => "/explorer")
 
-      within ".heroMap" do
+      within "#heroMap" do
         expect(page).to have_css(".mapboxgl-map")
         expect(page).to have_css(".mapboxgl-control-container")
       end
