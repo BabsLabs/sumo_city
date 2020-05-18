@@ -1,6 +1,6 @@
 import React from "react"
 import sumoLogo from "../images/SumoLogo"
-import { slide as Menu } from 'react-burger-menu'
+import { bubble as Menu } from 'react-burger-menu'
 
 class Navbar extends React.Component {
   showSettings(event) {
