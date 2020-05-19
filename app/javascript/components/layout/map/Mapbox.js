@@ -27,6 +27,7 @@ class Mapbox extends React.Component {
               "borderRadius": "50%",
               "backgroundColor": stable.hexcolor
             }}
+            className="custom-marker"
             onClick={() => {
               this.setSelectedMarker(stable)
             }} />
@@ -51,6 +52,15 @@ class Mapbox extends React.Component {
       selectedMarker: null
     });
   };
+
+  checkForMarker = () => {
+    if (this.props.selectedMarker) {
+      this.setSelectedMarker(this.props.selectedMarker)
+      this.closePopup()
+    } else {
+      {this.state.selectedMarker === null}
+    }
+  }
 
   
   render() {
@@ -77,6 +87,7 @@ class Mapbox extends React.Component {
         maxZoom={18}
         viewportChangeMethod={"flyTo"}
         onClick={this.closePopup}
+        onLoad={this.checkForMarker}
         > 
         {this.loadStables()}
         {this.state.selectedMarker !== null ? (
@@ -102,6 +113,7 @@ class Mapbox extends React.Component {
             <p>Founded: {this.state.selectedMarker.founded}</p>
             <p>Ichimon: {this.state.selectedMarker.ichimon}</p>
             <p>Website: {this.state.selectedMarker.website}</p>
+            <p><a href={"/stables/" + this.state.selectedMarker.id}>More Info</a></p>
           </Popup>
         ) : null}
         <Source id='stables' type='geojson' data={mapbox_geojson_data} />
@@ -121,11 +133,13 @@ class Mapbox extends React.Component {
   }
 }
 
+
 Mapbox.propTypes = {
   geojson_features: PropTypes.array,
   stables: PropTypes.array,
   height: PropTypes.string,
-  width: PropTypes.string
+  width: PropTypes.string,
+  selectedMarker: PropTypes.object
 };
 
 export default Mapbox
