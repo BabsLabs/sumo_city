@@ -1,0 +1,2 @@
+<%= react_component 'layout/Banner', { text: @stable.title + " Sumo Stable" } %>
+<%= react_component 'layout/stables/Stable', { geojson_features: @geojson_features, stables: @stables, height: "100%", width: "100%", selectedMarker: @stable } %>
