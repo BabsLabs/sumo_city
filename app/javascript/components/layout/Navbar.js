@@ -18,6 +18,7 @@ class Navbar extends React.Component {
             <a id="explorer" className="menu-item" href="/explorer">Explorer</a>
             <a id="wiki" className="menu-item" href="/terms">Wiki</a>
             <a id="about" className="menu-item" href="/about">About</a>
+            <a id="stables" className="menu-item" href="/stables">Stables</a>
           </Menu>
         </div>
 
@@ -37,6 +38,9 @@ class Navbar extends React.Component {
             </li>
             <li>
               <a href='/about'>About</a>
+            </li>
+            <li>
+              <a href='/stables'>Stables</a>
             </li>
           </ul>
         </div>
