@@ -57,6 +57,8 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 - Webpacker
 - Simplecov
 - shoulda-matchers
+- factory_bot
+- launchy
 
 ### Extensions
 - SASS
