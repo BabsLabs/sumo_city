@@ -11,6 +11,7 @@ require 'rspec/rails'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/dsl'
+require 'support/factory_bot'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
