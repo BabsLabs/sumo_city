@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/terms', to: 'terms#index'
   get '/explorer', to: 'explorer#index'
 
+  get  '/stables', to: 'stables#index'
+  get  '/stables/:id', to: 'stables#show'
+
 end

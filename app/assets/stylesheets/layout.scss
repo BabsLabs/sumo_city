@@ -254,3 +254,14 @@ Note: Beware of modifying this element as it can break the animations - you shou
   text-align: center;
   background-color: var(--light-color-two);
 }
+
+/* stables */
+.stable {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Map */
+.custom-marker:hover {
+  cursor: pointer;
+}
