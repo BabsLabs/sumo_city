@@ -1,0 +1,8 @@
+<%= react_component 'layout/Banner', { text: "Sumos" } %>
+<% @sumos.each do |sumo| %>
+  <div class="sumo" id="sumos-<%=sumo.id%>">
+    <h2><%= sumo.name %></h2>
+    <p><%= sumo.rank %></p>
+    <h3><a href="/sumos/<%=sumo.id%>">More Info<a></h3>
+  </div>
+<% end %>
