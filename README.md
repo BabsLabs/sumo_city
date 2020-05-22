@@ -98,4 +98,4 @@ These deprecation warnings can be silenced by appending the `RUBYOPT='-W:no-depr
  ## Contributions
 Interested in contributiong to SumoCity? Go ahead and open a PR!
 
-###### BabsLabs Software
+###### BabsLabs Software 2020

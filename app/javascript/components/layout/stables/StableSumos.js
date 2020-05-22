@@ -7,8 +7,8 @@ class StableSumos extends React.Component {
     return this.props.sumos.map(sumo => {
       return (
         <div key={sumo.id} className="sumo" id={"sumo-" + sumo.id}>
-          <p><a href={"/sumos/" + sumo.id}>{sumo.name}</a></p>
-          <p>{sumo.rank}</p>
+          <h3><a href={"/sumos/" + sumo.id}>{sumo.name}</a></h3>
+          <p>Rank: {sumo.rank}</p>
         </div>
       )
     })
@@ -17,7 +17,7 @@ class StableSumos extends React.Component {
   render () {
     return (
       <div className="sumo-list">
-        <h2>This Stables Top Sumo:</h2>
+        <h2>{this.props.stableName}'s Top Sumo:</h2>
         {this.loadSumos()} 
       </div>
     );
@@ -25,7 +25,8 @@ class StableSumos extends React.Component {
 }
 
 StableSumos.propTypes = {
-  sumos: PropTypes.array
+  sumos: PropTypes.array,
+  stableName: PropTypes.string
 };
 
 export default StableSumos
