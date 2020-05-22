@@ -19,6 +19,7 @@ class Navbar extends React.Component {
             <a id="wiki" className="menu-item" href="/terms">Wiki</a>
             <a id="about" className="menu-item" href="/about">About</a>
             <a id="stables" className="menu-item" href="/stables">Stables</a>
+            <a id="stables" className="menu-item" href="/sumos">Sumo</a>
           </Menu>
         </div>
 
@@ -27,21 +28,12 @@ class Navbar extends React.Component {
 
         <div id="desktop-navbar">
           <ul>
-            <li>
-              <a href='/'>Home</a>
-            </li>
-            <li>
-              <a href='/explorer'>Explorer</a>
-            </li>
-            <li>
-              <a href='/terms'>Wiki</a>
-            </li>
-            <li>
-              <a href='/about'>About</a>
-            </li>
-            <li>
-              <a href='/stables'>Stables</a>
-            </li>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/explorer'>Explorer</a></li>
+            <li><a href='/terms'>Wiki</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/stables'>Stables</a></li>
+            <li><a href='/sumos'>Sumo</a></li>
           </ul>
         </div>
       </nav>
