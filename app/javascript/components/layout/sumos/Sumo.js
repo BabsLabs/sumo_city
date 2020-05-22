@@ -5,7 +5,7 @@ class Sumo extends React.Component {
     return (
         <div className="sumo" id={"sumo-" + this.props.sumo.id}>
           <p>Ring Name(s): {this.props.sumo.ring_name}</p>
-          <p>Heya (Stable): {this.props.sumo.heya}</p>
+          <p>Heya (Stable): <a href={"/stables/" + this.props.stable.id}>{this.props.stable.title}</a></p>
           <p>Rank: {this.props.sumo.rank}</p> 
           <p>Date of Birth: {this.props.sumo.date_of_birth}, {this.props.sumo.year_of_birth}</p>
           <p>Place of Birth: {this.props.sumo.place_of_birth}</p>
@@ -17,6 +17,7 @@ class Sumo extends React.Component {
 }
 
 Sumo.propTypes = {
-  sumo: PropTypes.object
+  sumo: PropTypes.object,
+  stable: PropTypes.object
 };
 export default Sumo
