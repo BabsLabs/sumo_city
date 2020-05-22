@@ -21,7 +21,7 @@ describe "Sumo show page testing", :type => :feature, js: :true do
 
     within("#sumo-#{sumo_2.id}") do
       expect(page).to have_content(sumo_2.ring_name)
-      expect(page).to have_content(sumo_2.heya)
+      expect(page).to have_link(sumo_2.stable.title)
       expect(page).to have_content(sumo_2.rank)
       expect(page).to have_content(sumo_2.date_of_birth)
       expect(page).to have_content(sumo_2.year_of_birth)
