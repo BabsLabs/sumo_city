@@ -27,7 +27,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
       expect(page).to have_content("Founded: #{stable_2.founded}")
       expect(page).to have_content("Closest Stations: #{stable_2.closest_stations}")
       expect(page).to have_content("Other Info: #{stable_2.other_info}")
-      # expect(page).to have_css(".colorbar-#{stable_2.hexcolor}")
+      # expect(page).to have_css(".colorbar-#{stable_2.hexcolor}") // Can't find this element for some reason!?
     end
   end
       
@@ -37,6 +37,41 @@ describe "Stable show page testing", :type => :feature, js: :true do
     
     within(".stableMap") do
       expect(page).to have_css(".mapboxgl-map")
+    end
+  end
+
+  it "can check for a stables sumos" do
+    stable_4 = create(:stable)
+    sumo_1 = create(:sumo, stable_id: stable_4.id)
+    sumo_2 = create( :sumo, 
+      name: "Fakesumo",
+      heya: "Test-beya",
+      full_name: "Fake Sumo",
+      ring_name: "Fakesumo Ringname",
+      rank: "Yokozuna",
+      date_of_birth: "April 21",
+      year_of_birth: "1984",
+      place_of_birth: "Hokkaido",
+      height: "180.0cm",
+      weight: "140.0kg",
+      favorite_techniques: "oshi",
+      stable_id: stable_4.id)
+
+    visit("/stables/#{stable_4.id}")
+    
+    within ".sumo-list" do
+      expect(page).to have_css(".sumo")
+
+      within "#sumo-#{sumo_1.id}" do
+        expect(page).to have_link(sumo_1.name)
+        expect(page).to have_content(sumo_1.rank)
+      end
+
+      within "#sumo-#{sumo_2.id}" do
+        expect(page).to have_link(sumo_2.name)
+        expect(page).to have_content(sumo_2.rank)
+      end
+      
     end
   end
 end
