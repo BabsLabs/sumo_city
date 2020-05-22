@@ -20,6 +20,7 @@ describe "React Navbar testing", :type => :feature, js: true do
         expect(page).to have_link("Wiki")
         expect(page).to have_link("Explorer")
         expect(page).to have_link("Stables")
+        expect(page).to have_link("Sumo")
       end
     end
   end
@@ -41,6 +42,7 @@ describe "React Navbar testing", :type => :feature, js: true do
       expect(page).to have_link("Wiki", visible: false)
       expect(page).to have_link("Explorer", visible: false)
       expect(page).to have_link("Stables", visible: false)
+      expect(page).to have_link("Sumo", visible: false)
     end
   end
 end

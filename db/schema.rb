@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_033854) do
+ActiveRecord::Schema.define(version: 2020_05_22_164743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 2020_05_13_033854) do
     t.string "other_info"
   end
 
+  create_table "sumos", force: :cascade do |t|
+    t.string "name"
+    t.string "heya"
+    t.string "full_name"
+    t.string "ring_name"
+    t.string "rank"
+    t.string "date_of_birth"
+    t.string "year_of_birth"
+    t.string "place_of_birth"
+    t.string "height"
+    t.string "weight"
+    t.string "favorite_techniques"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "stable_id", null: false
+    t.index ["stable_id"], name: "index_sumos_on_stable_id"
+  end
+
   create_table "terms", force: :cascade do |t|
     t.string "english_name"
     t.string "japanese_name"
@@ -39,4 +57,5 @@ ActiveRecord::Schema.define(version: 2020_05_13_033854) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "sumos", "stables"
 end

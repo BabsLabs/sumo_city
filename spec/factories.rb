@@ -20,4 +20,18 @@ FactoryBot.define do
     japanese_name {"試験期間"}
     definition {"It was not the wife; it was the children, groaned the prisoner. God help me, I would not have them ashamed of their father. My God! What an exposure! What can I do? Sherlock Holmes sat down beside him on the couch and patted him kindly on the shoulder."}
   end
+
+  factory :sumo do 
+    name {"Testsumo"}
+    heya {"Test-beya"}
+    full_name {"Testsumo Sho"}
+    ring_name {"Testsumo Ringname"}
+    rank {"Yokozuna"}
+    date_of_birth {"January 5"}
+    year_of_birth {"1988"}
+    place_of_birth {"Tokyo"}
+    height {"192.0cm"}
+    weight {"151.0kg"}
+    favorite_techniques {"migi-yotsu/yori"}
+  end
 end

@@ -10,4 +10,8 @@ describe Stable do
     it { should validate_presence_of(:lon).on(:create) }
     it { should validate_presence_of(:lat).on(:create) }
   end
+
+  describe 'relationships' do
+    it { should have_many(:sumos) }
+  end
 end

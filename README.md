@@ -23,6 +23,7 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Migrate to development database: `rails db:migrate`
 * Run rake task to import term data to development database: `rake import:terms`
 * Run rake task to import stable data to development database: `rake import:stables`
+* Run rake task to import sumo data to development database: `rake import:sumos`
 * Add `.env` file to root directory
 * In `.env` file add `MAPBOX_KEY=<your key from mapbox>`
 * Start server: `rails s`
