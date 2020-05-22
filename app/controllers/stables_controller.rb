@@ -6,6 +6,7 @@ class StablesController < ApplicationController
 
   def show
     @stable = Stable.find(params[:id])
+    @sumos = @stable.sumos
     @stables = Stable.all
     @geojson_features = Array.new
     
