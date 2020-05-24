@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Stable show page testing", :type => :feature, js: :true do
   
-  it "can check an individual stable page for banner content" do
+  it "can check an individual stable page for banner content", js: :true do
     stable_1 = create(:stable)
     
     visit("/stables/#{stable_1.id}")
@@ -12,7 +12,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
     end
   end
       
-  it "can check an individual stable page for stable content" do
+  it "can check an individual stable page for stable content", js: :true do
     stable_2 = create(:stable)
     
     visit("/stables/#{stable_2.id}")
@@ -31,7 +31,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
     end
   end
       
-  it "can check an individual stable page for content" do
+  it "can check an individual stable page for content", js: :true do
     stable_3 = create(:stable)
     visit("/stables/#{stable_3.id}")
     
@@ -40,7 +40,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
     end
   end
 
-  it "can check for a stables sumos" do
+  it "can check for a stables sumos if they have top sumo", js: :true do
     stable_4 = create(:stable)
     sumo_1 = create(:sumo, stable_id: stable_4.id)
     sumo_2 = create( :sumo, 
@@ -74,5 +74,13 @@ describe "Stable show page testing", :type => :feature, js: :true do
       end
       
     end
+  end
+  
+  it "it doesn;t show a stables top sumo section if they don't have top sumo", js: :true do
+    stable_5 = create(:stable)
+
+    visit("/stables/#{stable_5.id}")
+    
+    expect(page).to have_no_css(".sumo_list")
   end
 end
