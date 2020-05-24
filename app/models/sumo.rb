@@ -10,7 +10,6 @@ class Sumo < ApplicationRecord
                         :height,
                         :weight,
                         :favorite_techniques,
-                        on: [:create])
-
-    belongs_to :stable
+                        on: [:create, :update])
+  belongs_to :stable
 end
