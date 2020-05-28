@@ -62,6 +62,7 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 ### Extensions
 - SASS
 - Mapbox-Gl / @urbica/react-map-gl
+- Font Awesome
 
 ### Database Management
 - Postgresql
