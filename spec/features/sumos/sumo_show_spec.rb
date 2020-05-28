@@ -30,4 +30,15 @@ describe "Sumo show page testing", :type => :feature, js: :true do
       expect(page).to have_content(sumo_2.weight)
     end
   end
+
+  it "can check for the sumo card image" do
+    stable_3 = create(:stable)
+    sumo_3 = create(:sumo, stable_id: stable_3.id)
+
+    visit("/sumos/#{sumo_3.id}")
+    
+    within("#card-#{sumo_3.id}") do
+      
+    end
+  end
 end
