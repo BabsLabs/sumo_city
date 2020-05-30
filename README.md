@@ -22,6 +22,7 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Create database: `rails db:create`
 * Migrate to development database: `rails db:migrate`
 * Run rake task to import data to development database: `rake import`
+* Run rake task to import photos to development database: `rake import_photos`
 * Add `.env` file to root directory
 * In `.env` file add `MAPBOX_KEY=<your key from mapbox>`
 * Start server: `rails s`
