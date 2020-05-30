@@ -282,7 +282,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Sumo card images */
 // Note: The card borders are styled in `sumos/show.html.erb` so the border color can be passed in
 .card {
-  max-height: 400px;
+  max-height: 60vh;
   margin: 20px;
 }
 
