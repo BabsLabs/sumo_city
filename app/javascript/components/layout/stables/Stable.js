@@ -15,7 +15,7 @@ class Stable extends React.Component {
 
     return (
       <div className="hero">
-        <div className="heroText">
+        <div className="hero-text">
           <div id={'stable-' + stable.id} className="stable">
             <hr className={"colorbar-" + stable.hexcolor} style={{
               "display": "block",

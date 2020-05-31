@@ -7,7 +7,7 @@ class HeroExplorer extends React.Component {
   render() {
     return (
       <div className="hero" id="heroExplorer">
-          <div className="heroText">
+          <div className="hero-text">
             <h1>SumoCity Explorer</h1>
             <p>Use the interactive <a href="/explorer">SumoCity Explorer</a> to learn more about the stables of all your favorite sumo wrestlers.</p>
           </div>

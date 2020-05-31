@@ -22,6 +22,7 @@ Welcome to SumoCity! SumoCity is designed to keep track of everything Sumo! Curr
 * Create database: `rails db:create`
 * Migrate to development database: `rails db:migrate`
 * Run rake task to import data to development database: `rake import`
+* Run rake task to import photos to development database: `rake import_photos`
 * Add `.env` file to root directory
 * In `.env` file add `MAPBOX_KEY=<your key from mapbox>`
 * Start server: `rails s`
@@ -62,6 +63,7 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 ### Extensions
 - SASS
 - Mapbox-Gl / @urbica/react-map-gl
+- AWS S3
 - Font Awesome
 
 ### Database Management

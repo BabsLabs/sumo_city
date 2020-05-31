@@ -213,7 +213,7 @@ ul {
     }
 }
 
-.heroText {
+.hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -287,4 +287,16 @@ ul {
 // Map
 .custom-marker:hover {
   cursor: pointer;
+}
+
+/* Sumo card images */
+// Note: The card borders are styled in `sumos/show.html.erb` so the border color can be passed in
+.card {
+  max-height: 60vh;
+  margin: 20px;
+}
+
+.sumo-show {
+  align-items: center;
+  justify-items: center;
 }

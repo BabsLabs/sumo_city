@@ -30,4 +30,17 @@ describe "Sumo show page testing", :type => :feature, js: :true do
       expect(page).to have_content(sumo_2.weight)
     end
   end
+
+  it "can check for the sumo card image" do
+    stable_3 = create(:stable)
+    sumo_3 = create(:sumo, stable_id: stable_3.id)
+
+    visit("/sumos/#{sumo_3.id}")
+    
+    expect(page).to have_css(".hero")
+    expect(page).to have_css(".sumo-show")
+    
+    # Will need to find out how to best test this. Do I need a mock?
+    # expect(page).to have_css(".card")
+  end
 end

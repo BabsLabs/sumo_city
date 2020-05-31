@@ -12,4 +12,5 @@ class Sumo < ApplicationRecord
                         :favorite_techniques,
                         on: [:create, :update])
   belongs_to :stable
+  has_one_attached :profile_photo
 end

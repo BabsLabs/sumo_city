@@ -1,2 +1,5 @@
 <%= react_component 'layout/Banner', { text: @sumo.name } %>
-<%= react_component 'layout/sumos/Sumo', { sumo: @sumo, stable: @stable } %>
+<div class="hero sumo-show" >
+  <%= image_tag(@sumo.profile_photo, style: "border: 20px solid #{@sumo.stable.hexcolor}", class: "card") if @sumo.profile_photo.attached? %>
+  <%= react_component 'layout/sumos/Sumo', { sumo: @sumo, stable: @stable } %>
+</div>
