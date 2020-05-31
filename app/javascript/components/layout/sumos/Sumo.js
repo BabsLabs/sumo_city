@@ -5,6 +5,7 @@ class Sumo extends React.Component {
   render () {
     return (
         <div className="hero-text sumo" id={"sumo-" + this.props.sumo.id}>
+          <h3>{this.props.sumo.name}'s Stats</h3>
           <p>Ring Name(s): {this.props.sumo.ring_name}</p>
           <p>Heya (Stable): <a href={"/stables/" + this.props.stable.id}>{this.props.stable.title}</a></p>
           <p>Rank: {this.props.sumo.rank}</p> 
