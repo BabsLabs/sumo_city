@@ -1,6 +1,6 @@
 class SumosController < ApplicationController
   def index
-    @sumos = Sumo.all
+    @sumos = Sumo.order(:name)
   end
   
   def show
