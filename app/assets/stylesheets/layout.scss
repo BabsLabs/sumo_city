@@ -32,14 +32,6 @@ html, body {
   margin-bottom: -50px;
 }
 
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
 // Navbar
 .navbar {
   display: flex;
@@ -60,14 +52,16 @@ ul {
 
   ul {
     display: flex;
+    list-style: none;
   }
 
   li {
     padding-right:  15px;
     text-align: center;
   }
-
+  
   a {
+    text-decoration: none;
     font-weight: 700;
     color: var(--secondary-color);
   }
@@ -190,9 +184,14 @@ ul {
 }
 
 // About page
-.about {
+#about {
   padding: 2rem;
   text-align: center;
+
+  li {
+    margin: 0rem 2rem 0rem 2rem;
+    text-align: left;
+  }
 }
 
 // Index page
