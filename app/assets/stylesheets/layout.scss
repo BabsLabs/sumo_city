@@ -74,6 +74,12 @@ ul {
 
   a:hover {
     color: var(--light-color);
+
+    @include fadeout;
+  }
+
+  a:active {
+    color: var(--light-color-two);
   }
 
   p {

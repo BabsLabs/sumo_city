@@ -39,3 +39,8 @@
        @content;
    }
 }
+
+// Fadeout effect
+@mixin fadeout {
+  transition: color 0.3s;
+}
