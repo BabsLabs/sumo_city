@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import placeHolderImage from "../../images/SumoLogo.png"
 class Sumo extends React.Component {
   render () {
     return (
