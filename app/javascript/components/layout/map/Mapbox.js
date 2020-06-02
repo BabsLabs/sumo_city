@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import sumoMarker from "../../images/SumoMarker.png"
+import customSumoMarker from "../../images/CustomSumoMarker.png"
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapGL, { Marker, Popup, Source, Layer } from '@urbica/react-map-gl';
 
@@ -22,7 +22,7 @@ class Mapbox extends React.Component {
           key={stable.title}
           latitude={stable.lat}
           longitude={stable.lon}>
-            <img src={sumoMarker} style={{
+          <img src={customSumoMarker} style={{
               "height": "30px",
               "borderRadius": "50%",
               "backgroundColor": stable.hexcolor

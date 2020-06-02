@@ -26,7 +26,7 @@ describe "React Navbar testing", :type => :feature, js: true do
         expect(page).to have_css(".fa-id-badge")
         expect(page).to have_css(".fa-book")
         expect(page).to have_css(".fa-info-circle")
-        expect(page).to have_css(".fa-2x")
+        expect(page).to have_css(".fa-lg")
       end
     end
   end
