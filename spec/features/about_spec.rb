@@ -8,6 +8,8 @@ describe "React About testing", :type => :feature, js: true do
       expect(page).to have_content("About")
     end
 
+    expect(page).to have_css("#about-image")
+
     within "#about" do
       expect(page).to have_content("Sumo city is your homepage for all things Sumo")
       expect(page).to have_content("What is SumoCity?")
