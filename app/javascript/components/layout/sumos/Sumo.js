@@ -8,11 +8,11 @@ class Sumo extends React.Component {
     const profile_photo = this.props.profile_photo
     if (profile_photo) {
       return (
-        <img src={this.props.profile_photo} alt={this.props.sumo.name + "profile photo"} className="card" style={{ "border": "20px solid" + this.props.stable.hexcolor }} />
+        <img src={this.props.profile_photo} alt={this.props.sumo.name + "profile photo"} className="profile-photo" style={{ "border": "20px solid" + this.props.stable.hexcolor }} />
       )
     }
     return (
-      <img src={CustomSumoLogo} alt="palceholder profile photo" className="card" style={{ "border": "20px solid" + this.props.stable.hexcolor }} />
+      <img src={CustomSumoLogo} alt="palceholder profile photo" className="profile-photo" style={{ "border": "20px solid" + this.props.stable.hexcolor }} />
     )
   }
 
