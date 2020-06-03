@@ -37,8 +37,8 @@ describe "Sumo show page testing", :type => :feature, js: :true do
 
     visit("/sumos/#{sumo_3.id}")
     
-    expect(page).to have_css(".hero")
-    expect(page).to have_css(".hero-image")
+    expect(page).to have_css(".grid-wrapper")
+    expect(page).to have_css(".flex-center")
     
     expect(page).to have_css(".profile-photo")
   end

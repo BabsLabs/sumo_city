@@ -1,6 +1,6 @@
 <%= react_component 'layout/Banner', { text: "Stables" } %>
 <% @stables.each do |stable| %>
-  <div class="stable" id="stables-<%=stable.id%>">
+  <div class="centered-text" id="stables-<%=stable.id%>">
     <h2><%= stable.title %> Sumo Stable</h2>
     <p><%= stable.address %></p>
     <p><a href="<%= stable.website %>" ><%= stable.website %><a></p>

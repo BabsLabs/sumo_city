@@ -5,12 +5,12 @@ class HeroSumoWiki extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="hero" id="heroSumoWiki">
-          <section className="hero-text">
+        <div className="grid-wrapper" id="hero-sumo-wiki">
+          <section className="flex-center">
             <h1>Learn More About Everything Sumo</h1>
             <p>Use the <a href="/terms">SumoWiki</a> to learn more about the rules, history, and vocabulary of Sumo.</p>
           </section>
-          <section className="hero-text">
+          <section className="flex-center">
             <h1>Featured Term</h1>
             <h3>{this.props.term.english_name}</h3>
             <h4>{this.props.term.japanese_name}</h4>

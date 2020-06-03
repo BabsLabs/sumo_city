@@ -6,7 +6,7 @@ class StableSumos extends React.Component {
   loadSumos = () => {
     return this.props.sumos.map(sumo => {
       return (
-        <div key={sumo.id} className="sumo" id={"sumo-" + sumo.id}>
+        <div key={sumo.id} id={"sumo-" + sumo.id}>
           <h3><a href={"/sumos/" + sumo.id}>{sumo.name}</a></h3>
           <p>Rank: {sumo.rank}</p>
         </div>

@@ -1,0 +1,156 @@
+@import './base';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+}
+
+#desktop-navbar {
+  display: none;
+
+  @include medium {
+    display: contents;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  li {
+    padding-right:  15px;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+
+  a:hover {
+    color: var(--light-color);
+
+    @include fade-in;
+  }
+
+  a:active {
+    color: var(--light-color-two);
+  }
+
+  p {
+    line-height: 20px;
+  }
+}
+
+#navbar-sumoLogo {
+  display: none;
+
+  @include medium {
+    height: 50px;
+    display: inline;
+  }
+}
+
+#navbar-sumoCity {
+  font-size: 2rem;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: 800;
+  
+  @include medium {
+      margin-right: auto;
+    }
+}
+
+// Mobile Hamburger Menu Styles
+#hamburger-menu {
+   @include medium {
+      display: none;
+    }
+}
+
+// Position and sizing of burger button
+.bm-burger-button {
+  position: relative;
+  width: 36px;
+  height: 30px;
+}
+
+// Color/shape of burger icon bars
+.bm-burger-bars {
+  background: var(--secondary-color);
+}
+
+// Color/shape of burger icon bars on hove
+.bm-burger-bars-hover {
+  background: var(--light-color);
+}
+
+// Position and sizing of clickable cross button
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+// Color/shape of close button cross
+.bm-cross {
+  background: var(--primary-color);
+}
+
+// Sidebar wrapper styles
+// Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+.bm-menu-wrap {
+  position: fixed;
+  height: 100vw;
+  top: 0px;
+  left: 0px;
+}
+
+// General sidebar styles
+.bm-menu {
+  background: var(--secondary-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+// Morph shape necessary with bubble or elastic
+.bm-morph-shape {
+  fill: var(--secondary-color);
+}
+
+// Wrapper for item list
+.bm-item-list {
+  color: var(--light-color-two);
+  padding: 0.8em;
+}
+
+// Individual item
+.bm-item {
+  display: inline-block;
+  color: var(--primary-color);
+  padding: 5px;
+  font-weight: bold;
+}
+.bm-item:hover {
+  color: var(--light-color);
+}
+
+// Styling of overlay
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0px;
+  left: 0px;
+}
+
+// Burner Menu Navbar icons
+.bm-item {
+  
+  .fas {
+  padding-right: 10px;
+  }
+}

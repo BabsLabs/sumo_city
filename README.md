@@ -63,7 +63,7 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 - launchy
 
 ### Extensions
-- SASS
+- SASS/SCSS
 - Mapbox-Gl / @urbica/react-map-gl
 - AWS S3
 - Font Awesome
