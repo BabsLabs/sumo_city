@@ -38,9 +38,8 @@ describe "Sumo show page testing", :type => :feature, js: :true do
     visit("/sumos/#{sumo_3.id}")
     
     expect(page).to have_css(".hero")
-    expect(page).to have_css(".sumo-show")
+    expect(page).to have_css(".hero-image")
     
-    # Will need to find out how to best test this. Do I need a mock?
-    # expect(page).to have_css(".card")
+    expect(page).to have_css(".card")
   end
 end
