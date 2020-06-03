@@ -5,6 +5,5 @@ class SumosController < ApplicationController
   
   def show
     @sumo = Sumo.find(params[:id])
-    @stable = @sumo.stable
   end
 end

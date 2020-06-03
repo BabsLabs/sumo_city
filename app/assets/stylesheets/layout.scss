@@ -243,6 +243,12 @@ html, body {
   }
 }
 
+.hero-image {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 #heroSumoWiki {
   background-color: var(--light-color-two);
 }
@@ -303,14 +309,10 @@ html, body {
   cursor: pointer;
 }
 
-/* Sumo card images */
-// Note: The card borders are styled in `sumos/show.html.erb` so the border color can be passed in
-.card {
+/* Sumo profile_photo images (aka - the cards) */
+.profile-photo {
   max-height: 60vh;
   margin: 20px;
-}
-
-.sumo-show {
-  align-items: center;
-  justify-items: center;
+  max-width: 40vw;
+  background-color: var(--light-color-two);
 }
