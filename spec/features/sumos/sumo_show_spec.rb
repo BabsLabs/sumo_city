@@ -40,6 +40,6 @@ describe "Sumo show page testing", :type => :feature, js: :true do
     expect(page).to have_css(".hero")
     expect(page).to have_css(".hero-image")
     
-    expect(page).to have_css(".card")
+    expect(page).to have_css(".profile-photo")
   end
 end
