@@ -5,7 +5,7 @@ class About extends React.Component {
   render() {
     return (
       <div>
-          <div id="about-image">
+          <div id="about-image" className="flex-center">
             <img src={customSumoLogo} />
           </div>
           <div id="about">
