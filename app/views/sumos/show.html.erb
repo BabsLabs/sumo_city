@@ -1,5 +1,8 @@
 <%= react_component 'layout/Banner', { text: @sumo.name } %>
-<div class="hero sumo-show" >
-  <%= image_tag(@sumo.profile_photo, style: "border: 20px solid #{@sumo.stable.hexcolor}", class: "card") if @sumo.profile_photo.attached? %>
-  <%= react_component 'layout/sumos/Sumo', { sumo: @sumo, stable: @stable } %>
-</div>
+  
+<% if @sumo.profile_photo.attached? %>
+  <% url = url_for(@sumo.profile_photo) %>
+<% else %>
+  <% url = nil %>
+<% end %>
+<%= react_component 'layout/sumos/Sumo', { sumo: @sumo, stable: @sumo.stable, profile_photo: url } %>
