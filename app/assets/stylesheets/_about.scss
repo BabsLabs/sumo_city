@@ -1,0 +1,20 @@
+@import './base';
+
+#about {
+  padding: 20px;
+  text-align: center;
+
+  li {
+    margin: 0rem 20px 0rem 20px;
+    text-align: left;
+  }
+}
+
+#about-image {
+  padding-top: 1rem;
+
+  img {
+    max-width: 40vh;
+    max-height: 40vh;
+  }
+}

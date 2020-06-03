@@ -1,0 +1,20 @@
+@import './base';
+
+.push {
+  height: 50px;
+}
+
+.footer {
+  height: 50px;
+  text-align: center;
+  background-color: var(--reddish-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#babslabs-logo {
+  height: 45px;
+  padding-left: 10px;
+}

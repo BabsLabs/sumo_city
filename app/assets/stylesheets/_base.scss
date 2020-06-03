@@ -1,0 +1,8 @@
+// All files will import from _base.scss
+
+// External imports
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@700;800&family=Poppins:wght@400;700&display=swap');
+
+// Locals
+@import './mixins';
+@import './breakpoints';
