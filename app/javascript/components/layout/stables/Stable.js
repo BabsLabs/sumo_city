@@ -14,9 +14,9 @@ class Stable extends React.Component {
     const stable = this.props.selectedMarker;
 
     return (
-      <div className="hero">
-        <div className="hero-text">
-          <div id={'stable-' + stable.id} className="stable">
+      <div className="grid-wrapper">
+        <div className="flex-center">
+          <div id={'stable-' + stable.id}>
             <hr className={"colorbar-" + stable.hexcolor} style={{
               "display": "block",
               "height": "1px",
@@ -26,8 +26,8 @@ class Stable extends React.Component {
               "margin": "1em 0",
               "padding": "0",
             }}></hr>
-            <h3>Address: {stable.address}</h3>
-            <h3>{stable.address_jp}</h3>
+            <p>Address: {stable.address}</p>
+            <p>{stable.address_jp}</p>
             <p>Website: <a href={stable.website}>{stable.website}</a></p>
             <p>Phone: {stable.phone}</p>
             <p>Ichimon: {stable.ichimon}</p>

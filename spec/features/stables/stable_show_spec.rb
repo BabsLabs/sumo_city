@@ -61,7 +61,6 @@ describe "Stable show page testing", :type => :feature, js: :true do
     
     within ".sumo-list" do
       expect(page).to have_content("#{stable_4.title}'s Top Sumo:")
-      expect(page).to have_css(".sumo")
 
       within "#sumo-#{sumo_1.id}" do
         expect(page).to have_link(sumo_1.name)

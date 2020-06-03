@@ -3,8 +3,8 @@ import React from "react"
 class HeroFindSumo extends React.Component {
   render() {
     return (
-      <div className="hero heroFindSumo">
-        <section className="hero-text">
+      <div className="grid-wrapper heroFindSumo">
+        <section className="flex-center">
           <h1>Find Your Favorite Sumo</h1>
           <p>Learn more about all your favorite sumo wrestlers.</p>
         </section>

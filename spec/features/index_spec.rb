@@ -7,18 +7,18 @@ describe "React homepage testing", :type => :feature, js: true do
     visit('/')
     expect(page.title).to have_content("SumoCity")
 
-    within "#heroExplorer" do     
+    within "#hero-explorer" do     
       expect(page).to have_content("SumoCity Explorer")
       expect(page).to have_content("Use the interactive SumoCity Explorer to learn more about the stables of all your favorite sumo wrestlers.")
       expect(page).to have_link("SumoCity Explorer", :href => "/explorer")
 
-      within "#heroMap" do
+      within "#hero-map" do
         expect(page).to have_css(".mapboxgl-map")
         expect(page).to have_css(".mapboxgl-control-container")
       end
     end
 
-    within "#heroSumoWiki" do
+    within "#hero-sumo-wiki" do
       expect(page).to have_content("Learn More About Everything Sumo")  
       expect(page).to have_content("Use the SumoWiki to learn more about the rules, history, and vocabulary of Sumo.")
       expect(page).to have_link("SumoWiki", :href => "/terms")
