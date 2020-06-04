@@ -18,6 +18,7 @@ describe "Stable index page testing", :type => :feature, js: true do
       lat: 139.8888,
       other_info: "I am alone in the castle with those awful women. Faugh! Mina is a woman, and there is nought in common. They are devils of the Pit!"
     )
+    @sumo = create(:sumo, stable_id: @stable_1.id)
 
     visit("/")
     click_link("Stables")
