@@ -61,13 +61,8 @@ class Mapbox extends React.Component {
       {this.state.selectedMarker === null}
     }
   }
-
   
   render() {
-    const mapbox_geojson_data = {
-      type: 'FeatureCollection',
-      features: this.props.geojson_features
-    };
 
     return (
       <MapGL
@@ -116,7 +111,7 @@ class Mapbox extends React.Component {
             <p><a href={"/stables/" + this.state.selectedMarker.id}>More Info</a></p>
           </Popup>
         ) : null}
-        <Source id='stables' type='geojson' data={mapbox_geojson_data} />
+        <Source id='stables' type='geojson' data={this.props.geojson_features} />
         <Layer
           id='stables'
           type='symbol'
@@ -135,7 +130,7 @@ class Mapbox extends React.Component {
 
 
 Mapbox.propTypes = {
-  geojson_features: PropTypes.array,
+  geojson_features: PropTypes.object,
   stables: PropTypes.array,
   height: PropTypes.string,
   width: PropTypes.string,
