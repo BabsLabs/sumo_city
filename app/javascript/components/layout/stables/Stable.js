@@ -50,7 +50,7 @@ class Stable extends React.Component {
 }
 
 Stable.propTypes = {
-  geojson_features: PropTypes.array,
+  geojson_features: PropTypes.object,
   stables: PropTypes.array,
   selectedMarker: object
 }

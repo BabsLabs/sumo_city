@@ -20,7 +20,7 @@ class HeroExplorer extends React.Component {
 }
 
 HeroExplorer.propTypes = {
-  geojson_features: PropTypes.array,
+  geojson_features: PropTypes.object,
   stables: PropTypes.array
 }
 
