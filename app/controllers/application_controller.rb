@@ -17,10 +17,14 @@ class ApplicationController < ActionController::Base
       }
     end
 
-    respond_to do |format|
-      format.html
-      format.json { render json: geojson_features }  # respond with the created JSON object
-    end
+    mapbox_geojson_data = {
+      type: 'FeatureCollection',
+      features: geojson_features
+    }
+
+    json_mapbox_data = mapbox_geojson_data.to_json
+
+    parsed_data = JSON.parse(json_mapbox_data)
   end
 
 end
