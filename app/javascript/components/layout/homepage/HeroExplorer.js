@@ -8,7 +8,7 @@ class HeroExplorer extends React.Component {
     return (
       <div className="grid-wrapper" id="hero-explorer">
         <div className="flex-center">
-            <h1>SumoCity Explorer</h1>
+            <h2>SumoCity Explorer</h2>
             <p>Use the interactive <a href="/explorer">SumoCity Explorer</a> to learn more about the stables of all your favorite sumo wrestlers.</p>
           </div>
           <div id="hero-map">
