@@ -1,10 +1,13 @@
 require 'rails_helper'
 
-describe "React homepage testing", :type => :feature, js: true do
-  it 'can check the Homepage for content' do
+describe "React Index page testing", :type => :feature, js: true do
+  it 'can check the Index page for content' do
     @term = Term.create!(english_name: "Kimetaoshi", japanese_name: "極め倒し", definition: "Immobilizing the opponent's arms and shoulders with one's arms and forcing him down (arm barring force down).")
+    @stable = create(:stable)
+    @sumo = create(:sumo, stable_id: @stable.id)
 
     visit('/')
+
     expect(page.title).to have_content("SumoCity")
 
     within "#hero-explorer" do     
@@ -28,7 +31,16 @@ describe "React homepage testing", :type => :feature, js: true do
       expect(page).to have_content(@term.definition)
     end
 
-    # Make sure About component content is not being rendered
-    expect(page).not_to have_content("Sumo city is your homepage for all things Sumo")
+    within "#hero-sumo" do
+      expect(page).to have_content("Professional sumo wrestlers are also known as Rikishi (力士).")
+      expect(page).to have_content("Visit the Sumo page to learn more about all your favorite sumo wrestlers.")
+      expect(page).to have_link("Sumo page")
+      expect(page).to have_css(".profile-photo")
+      expect(page).to have_css(".hero-image")
+      expect(page).to have_css(".centered-text")
+      expect(page).to have_css(".flex-center")
+      expect(page).to have_content("Featured Sumo")
+      expect(page).to have_content(@sumo.name)
+    end
   end
 end
