@@ -22,12 +22,13 @@ class Mapbox extends React.Component {
           key={stable.title}
           latitude={stable.lat}
           longitude={stable.lon}>
-          <img src={customSumoMarker} style={{
+          <img src={customSumoMarker} 
+            style={{
               "height": "30px",
               "borderRadius": "50%",
               "backgroundColor": stable.hexcolor
             }}
-            className="custom-marker"
+            className="custom-marker" 
             onClick={() => {
               this.setSelectedMarker(stable)
             }} />
