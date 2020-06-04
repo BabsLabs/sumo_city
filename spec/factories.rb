@@ -33,5 +33,10 @@ FactoryBot.define do
     height {"192.0cm"}
     weight {"151.0kg"}
     favorite_techniques {"migi-yotsu/yori"}
+
+    after(:build) do |sumo|
+      sumo.profile_photo.attach(io: File.open(Rails.root.join('spec', 'factory_images', 'CustomSumoLogo-test.png')), filename: 'CustomSumoLogo-test.png', content_type: 'image/png')
+    end
+
   end
 end
