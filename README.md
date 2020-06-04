@@ -34,6 +34,7 @@ You need the following mapbox variables configured in your `.env` file
 * `MAPBOX_ACCESS_TOKEN = "your_map_box_token`
 * `AWS_ACCESS_KEY_ID = "your_aws_access_key`
 * `AWS_SECRET_ACCESS_KEY = "your_aws_secret_access_key`
+* Optional: To use skylight.io add `SKYLIGHT_AUTHENTICATION = your_skylight_api_key`
 
 ## Testing
 Testing is currently setup and done with Rspec, Capybara, and Selenium. All tests are continuously integrated with TravisCI.
@@ -52,15 +53,22 @@ The Capybara javascript driver has been set as Chrome with Selenium instead of R
 - Javascript / React
 
 ### Testing
+
+#### Content Testing
 - Rspec
 - Capybara
 - Selenium
 - Headless chromedriver
 - Webpacker
-- Simplecov
+- launchy
+
+#### Model Testing
 - shoulda-matchers
 - factory_bot
-- launchy
+
+#### Monitoring
+- Simplecov
+- Skylight.io
 
 ### Extensions
 - SASS/SCSS
