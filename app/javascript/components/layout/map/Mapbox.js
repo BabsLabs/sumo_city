@@ -11,12 +11,11 @@ class Mapbox extends React.Component {
         longitude: 139.8394,
         zoom: 8
       },
-      stables: this.props.stables,
       selectedMarker: null
     }
   
   loadStables = () => {
-    return this.state.stables.map(stable => {
+    return this.props.stables.map(stable => {
       return (
         <Marker
           key={stable.title}
