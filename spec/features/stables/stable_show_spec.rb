@@ -4,6 +4,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
   
   it "can check an individual stable page for banner content", js: :true do
     stable_1 = create(:stable)
+    sumo_1 = create(:sumo, stable_id: stable_1.id)
     
     visit("/stables/#{stable_1.id}")
     
@@ -14,6 +15,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
       
   it "can check an individual stable page for stable content", js: :true do
     stable_2 = create(:stable)
+    sumo_2 = create(:sumo, stable_id: stable_2.id)
     
     visit("/stables/#{stable_2.id}")
 
@@ -33,6 +35,8 @@ describe "Stable show page testing", :type => :feature, js: :true do
       
   it "can check an individual stable page for content", js: :true do
     stable_3 = create(:stable)
+    sumo_3 = create(:sumo, stable_id: stable_3.id)
+
     visit("/stables/#{stable_3.id}")
     
     within(".stableMap") do
@@ -77,6 +81,7 @@ describe "Stable show page testing", :type => :feature, js: :true do
   
   it "it doesn;t show a stables top sumo section if they don't have top sumo", js: :true do
     stable_5 = create(:stable)
+    sumo_5 = create(:sumo, stable_id: stable_5.id)
 
     visit("/stables/#{stable_5.id}")
     

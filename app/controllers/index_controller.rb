@@ -1,5 +1,11 @@
 class IndexController < ApplicationController
   def index
+    @sumo = Sumo.all.sample(1).first
+    until @sumo.profile_photo.attached? 
+      @sumo = Sumo.all.sample(1).first
+      return @sumo
+    end
+
     @term = Term.all.sample(1).first
    
     @stables = Stable.all

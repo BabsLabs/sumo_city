@@ -1,5 +1,10 @@
 @import './base';
 
+#hero-explorer {
+  min-height: 50vh;
+}
+
 #hero-sumo-wiki {
   background-color: var(--light-color-two);
+  min-height: 30vh;
 }

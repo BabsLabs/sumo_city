@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe "React Navbar testing", :type => :feature, js: true do
   it 'can check the desktop Navbar for contents' do
+    @stable = create(:stable)
+    @sumo = create(:sumo, stable_id: @stable.id)
+
     visit('/')
     within ".navbar" do
       expect(page).to have_content("SumoCity")
@@ -32,6 +35,9 @@ describe "React Navbar testing", :type => :feature, js: true do
   end
 
   it 'can check the mobile Hamburger menu for contents' do
+    @stable = create(:stable)
+    @sumo = create(:sumo, stable_id: @stable.id)
+
     visit '/'
     within ".navbar" do
       expect(page).to have_content("SumoCity")
