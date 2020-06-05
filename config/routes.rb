@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get  '/sumos', to: 'sumos#index'
   get  '/sumos/:id', to: 'sumos#show'
 
+  get '/404', to: "errors#not_found"
+  get '/422', to: "errors#unacceptable"
+  get '/500', to: "errors#internal_error"
+
 end
