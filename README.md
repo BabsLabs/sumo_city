@@ -102,7 +102,7 @@ These deprecation warnings can be silenced by appending the `RUBYOPT='-W:no-depr
  * Ruby version
  `2.7.0`
  * Rails Version
- `6.0.2.2`
+ `6.0.3.2`
  * React Version
  `6.13.2`
 
