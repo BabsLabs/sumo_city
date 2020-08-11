@@ -1,5 +1,5 @@
 # Sumo City
-<img src="app/javascript/components/images/SumoLogo.png" alt="SumoCity Logo" width="200"/>
+<img src="app/javascript/components/images/CustomSumoLogo.png" alt="SumoCity Logo" width="200"/>
 
 [![Build Status](https://travis-ci.com/BabsLabs/sumo_city.svg?branch=master)](https://travis-ci.com/BabsLabs/sumo_city)
 
